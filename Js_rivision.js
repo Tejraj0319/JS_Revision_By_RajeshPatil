@@ -234,7 +234,7 @@
  
 // setTimeout & clearTimeout: Run only once after defined time
 // const timeoutId = setTimeout(() => {
-//   console.log("This will NOT run!");
+//   console.log("This will NOT run till 3 sec!");
 // }, 3000);
 // clearTimeout(timeoutId);
 // console.log("Timeout cleared before it could run!");
