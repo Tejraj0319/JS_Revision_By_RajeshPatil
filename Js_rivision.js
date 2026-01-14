@@ -2,6 +2,7 @@
 // console.log(typeof(1))
 // console.log(typeof(1.2))
 // console.log(typeof(13.123))
+// console.log(typeof(NaN))
 // console.log(typeof("1"))
 // console.log(typeof("Rajesh"))
 // console.log(typeof(true))
@@ -10,10 +11,10 @@
 // console.log(typeof(undefined))
 
 
-
 // Not-a-Number
 // console.log(isNaN(undefined))
 // console.log(isNaN("Rajesh"))
+// console.log(isNaN(NaN));
 // console.log(isNaN(1))
 // console.log(isNaN("1"))
 // console.log(isNaN(true))
@@ -134,7 +135,7 @@
 // }
 // const refer = xyz()
 // refer()
-// // or
+// or
 // xyz()()
 
 
@@ -351,4 +352,3 @@ console.log("Main arr shift: ",arr);
 // flat()
 const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
 console.log(myArr.flat(2));
-
