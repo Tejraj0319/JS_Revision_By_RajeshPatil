@@ -139,19 +139,64 @@
 //       *   *
 //         * *
 //           *
+// let n = 5;
+// for (let i = 1; i <= n; i++) {
+//   let pattern = "";
+//   for (let j = 1; j <= i; j++) {
+//     pattern += "  ";
+//   }
+//   for (let k = i; k <= n; k++) {
+//     if (k == i || k == n || i == 1) {
+//       pattern += "* ";
+//     }
+//     else{
+//         pattern += "  "
+//     }
+//   }
+//   console.log(pattern);
+// }
+
+
+
+//           * 
+//         * * * 
+//       * * * * * 
+//     * * * * * * * 
+//   * * * * * * * * * 
+// * * * * * * * * * * * 
+
+// let n = 5;
+// for(let i = 0; i <= n; i++){
+//   let pattern = "";
+//   for(let j = i; j <= n; j++){
+//       pattern += "  "
+//   }
+//   for(let k = 0; k <= i; k++){
+//       pattern += "* "
+//   }
+//   for(let l = 0; l < i; l++){
+//       pattern += "* "
+//   }
+//   console.log(pattern)
+// }
+
+
+
+//           *   
+//         *   *   
+//       *   *   *   
+//     *   *   *   *   
+//   *   *   *   *   *   
+// *   *   *   *   *   *  
+
 let n = 5;
-for (let i = 1; i <= n; i++) {
+for (let i = 0; i <= n; i++) {
   let pattern = "";
-  for (let j = 1; j <= i; j++) {
-    pattern += "  ";
+  for (let j = i; j <= n; j++) {
+    pattern += "  "
   }
-  for (let k = i; k <= n; k++) {
-    if (k == i || k == n || i == 1) {
-      pattern += "* ";
-    }
-    else{
-        pattern += "  "
-    }
+  for (let k = 0; k <= i; k++) {
+    pattern += "*   "
   }
-  console.log(pattern);
+  console.log(pattern)
 }

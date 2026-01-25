@@ -232,7 +232,7 @@
 // }, 1000);
 
 
- 
+
 // setTimeout & clearTimeout: Run only once after defined time
 // const timeoutId = setTimeout(() => {
 //   console.log("This will NOT run till 3 sec!");
@@ -322,33 +322,68 @@
 // getData()
 
 
+
+// Constructor functions
+// function Person(name, age){
+//     this.name = name;
+//     this.age = age;
+// }
+// var person1 = new Person("Rajesh", 24)
+// console.log(person1.name)
+
+
+
+// generator function:- used to pause and resume function from the point it is left
+// yield:- is used to pause the function(stop run this first)
+// next():- is used to resume the function from the point it is left
+// function* countUpToThree() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+// const count = countUpToThree();
+// console.log(count.next());
+// console.log(count.next());
+// console.log(count.next());
+
+
+
+// weakmap: in weakmap keys must be objects only and values can be any type
+// const weakmap = new WeakMap();
+// let user = {name:"Rajesh"}
+// weakmap.set(user, "Logged in");
+// console.log(weakmap.get(user));
+
+
+
 //  SLICE()
 let arr = [1, 2, 3, 4, 5];
 let result1 = arr.slice(1, 4); //will not include last range
 console.log(result1);
-console.log("Main arr after slice: ",arr); //will not remove elements from array
+console.log("Main arr after slice: ", arr); //will not remove elements from array
 
 //  SPLICE()
 let result2 = arr.splice(1, 2);
 console.log(result2); // will include all ranges
-console.log("Main arr after splice: ",arr); //will remove elements form array
+console.log("Main arr after splice: ", arr); //will remove elements form array
 
 //  PUSH()
 arr.push(6)
-console.log("Main arr push: ",arr);
+console.log("Main arr push: ", arr);
 
 // POP()
 arr.pop()
-console.log("Main arr pop: ",arr);
+console.log("Main arr pop: ", arr);
 
 //  UNSHIFT()
 arr.unshift(9)
-console.log("Main arr unshift: ",arr);
+console.log("Main arr unshift: ", arr);
 
 //  SHIFT()
 arr.shift()
-console.log("Main arr shift: ",arr);
+console.log("Main arr shift: ", arr);
 
 // flat()
 const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
 console.log(myArr.flat(2));
+
