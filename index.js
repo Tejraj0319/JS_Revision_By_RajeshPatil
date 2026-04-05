@@ -111,3 +111,60 @@
 //       return series;
 // }
 // console.log(fibonacci(10));
+
+
+
+
+// Find Second Largest Element in Array
+// const secondLargest = (arr) => {
+//     let largest = -Infinity;
+//     let secondLargest = -Infinity;
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > largest) {
+//             secondLargest = largest;
+//             largest = arr[i];
+//         }
+//         else if (arr[i] > secondLargest) {
+//             secondLargest = arr[i];
+//         }
+//     }
+//     return secondLargest;
+// }
+// console.log(secondLargest([10, 5, 20, 8, 15]))
+
+
+
+// Remove Duplicates from Array
+// const removeDuplicates = (arr)=>{
+//     let result = [];
+//   for(let i = 0; i < arr.length; i++){
+//     let flag = false;
+//     for(let j = 0; j < result.length; j++){
+//       if(arr[i] === result[j]){
+//         flag = true;
+//         break;
+//       }
+//     }
+//     if(!flag){
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
+
+
+
+// Count frequency of each character in a string.
+// const charCount = (str)=>{
+//   let count = {};
+//   for(let char of str){
+//     count[char] = (count[char] || 0) + 1;
+//   }
+//   return count;
+// }
+// console.log(charCount("aabbc")); 
+
+
+
+// 
