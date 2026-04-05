@@ -167,4 +167,34 @@
 
 
 
-// 
+// Reverse Words in a Sentence
+// const reverseWords = (str)=>{
+//     let result = []
+//     let words = str.split(" ");
+//     for(let word of words){
+//         let reverse = word.split("").reverse().join("")
+//         result.push(reverse)
+//     }
+//     return result.join(" ")
+// }
+// console.log(reverseWords("hello world"))
+
+
+// Move All Zeros to End
+// const moveZeros = (arr)=>{
+//     const newArr = [];
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] != 0){
+//             newArr.push(arr[i]);
+//         }
+//     }
+//     let j = newArr.length;
+//     while(j < arr.length){
+//         newArr.push(0);
+//         j++;
+//     }
+//     return newArr;
+// }
+// console.log(moveZeros([0,1,0,3,12]));
+
+
