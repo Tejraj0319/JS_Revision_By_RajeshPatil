@@ -32,7 +32,7 @@
 // HOF
 // function hof() {
 //   return function () {
-//     console.log( "A Function which returns another function or takes another function as argument is known as HOC");
+//     console.log( "A Function which returns another function or takes another function as argument is known as HOF");
 //   };
 // }
 // var x = hof(); // hof() returns the inner function and stores it in "x" i.e. x = function(){ console.log( "---")};
@@ -387,3 +387,19 @@ console.log("Main arr shift: ", arr);
 const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
 console.log(myArr.flat(2));
 
+
+
+console.log(5%2)
+console.log(8/2)
+console.log(5&2) // 1 1 = 1 remaining 0
+console.log(5|2) // 0 0 = 0 remaining 1
+console.log(5<<2)
+console.log(5>>2)
+let x = 5;
+console.log(--x);
+let y = 5;
+console.log(++y);
+var z = 0;
+z = ++z
+// z = z++ // this will first assign z to 0 and then increment it, so z will be 0 only
+console.log(z);
