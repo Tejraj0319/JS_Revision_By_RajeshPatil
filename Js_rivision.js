@@ -389,12 +389,12 @@ console.log(myArr.flat(2));
 
 
 
-console.log(5%2)
-console.log(8/2)
-console.log(5&2) // 1 1 = 1 remaining 0
-console.log(5|2) // 0 0 = 0 remaining 1
-console.log(5<<2)
-console.log(5>>2)
+console.log(5 % 2) // will give reminder
+console.log(5 / 2) // will give quotient
+console.log(5 & 2) // 1 1 = 1 remaining 0
+console.log(5 | 2) // 0 0 = 0 remaining 1
+console.log(5 << 2)
+console.log(5 >> 2)
 let x = 5;
 console.log(--x);
 let y = 5;
