@@ -198,3 +198,37 @@
 // console.log(moveZeros([0,1,0,3,12]));
 
 
+// Check if two strings are anagrams
+// const isAnagram = (str1,str2)=>{
+//     if(str1.length != str2.length)return false
+//     const s1 = str1.toLowerCase().split("").sort().join("")
+//     const s2 = str2.toLowerCase().split("").sort().join("")
+//     return s1 === s2
+// }
+// console.log(isAnagram("listen", "silent"));
+
+
+// Find Missing Number in Array (1 to n)
+// const findMissing = (arr)=>{
+//     const n = arr.length + 1;
+//     const sumOfFirstNNaturalNo = n*(n+1)/2;
+//     const sumOfArray = arr.reduce((acc, curr)=> acc+curr,0);
+//     return sumOfFirstNNaturalNo - sumOfArray;
+// }
+// console.log(findMissing([1, 2, 3, 5]));
+
+// Sort Array by Parity(Even first, then Odd)
+const sortByParity = (arr)=>{
+    let even = [];
+    let odd = [];
+    for(let num of arr){
+        if(num % 2 == 0){
+            even.push(num)
+        }
+        else{
+            odd.push(num)
+        }
+    }
+    return [...even, ...odd];
+}
+console.log(sortByParity([3, 1, 2, 4]));
