@@ -6,3 +6,5 @@ Find Second Largest Element in Array
 Check if two strings are anagrams
 Find Missing Number in Array (1 to n)
 Sort Array by Parity(Even first, then Odd)
+Find First Non-Repeating Element
+Find Pair with Given Sum

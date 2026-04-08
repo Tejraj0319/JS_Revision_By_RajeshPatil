@@ -68,7 +68,6 @@
 
 
 
-
 // function fizzBuzz(n){
 //   for(let i = 1; i <= n; i++){
 //     if(i % 3 == 0){
@@ -111,7 +110,6 @@
 //       return series;
 // }
 // console.log(fibonacci(10));
-
 
 
 
@@ -180,6 +178,7 @@
 // console.log(reverseWords("hello world"))
 
 
+
 // Move All Zeros to End
 // const moveZeros = (arr)=>{
 //     const newArr = [];
@@ -198,6 +197,7 @@
 // console.log(moveZeros([0,1,0,3,12]));
 
 
+
 // Check if two strings are anagrams
 // const isAnagram = (str1,str2)=>{
 //     if(str1.length != str2.length)return false
@@ -206,6 +206,7 @@
 //     return s1 === s2
 // }
 // console.log(isAnagram("listen", "silent"));
+
 
 
 // Find Missing Number in Array (1 to n)
@@ -217,18 +218,53 @@
 // }
 // console.log(findMissing([1, 2, 3, 5]));
 
+
+
 // Sort Array by Parity(Even first, then Odd)
-const sortByParity = (arr)=>{
-    let even = [];
-    let odd = [];
-    for(let num of arr){
-        if(num % 2 == 0){
-            even.push(num)
-        }
-        else{
-            odd.push(num)
-        }
-    }
-    return [...even, ...odd];
-}
-console.log(sortByParity([3, 1, 2, 4]));
+// const sortByParity = (arr)=>{
+//     let even = [];
+//     let odd = [];
+//     for(let num of arr){
+//         if(num % 2 == 0){
+//             even.push(num)
+//         }
+//         else{
+//             odd.push(num)
+//         }
+//     }
+//     return [...even, ...odd];
+// }
+// console.log(sortByParity([3, 1, 2, 4]));
+
+
+
+// Find First Non-Repeating Element
+// const firstNonRepeating = (arr)=>{
+//   let map = {}
+//   for(let num of arr){
+//     map[num] = (map[num] || 0) + 1;
+//   }
+//   for(let num of arr){
+//     if(map[num] === 1){
+//       return num;
+//     }
+//   }
+// }
+// console.log(firstNonRepeating([4, 5, 1, 2, 0, 4, 1, 0]));
+
+
+
+// Find Pair with Given Sum
+// const twoSum = (arr,target)=>{
+//   for(let i = 0; i < arr.length; i++){
+//     for(let j = i+1; j < arr.length; j++){
+//       if(arr[i] + arr[j] == target){
+//         return [arr[i], arr[j]];
+//       }
+//       else{
+//         return [];
+//       }
+//     }
+//   }
+// }
+// console.log(twoSum([2, 7, 11, 15], 13));
