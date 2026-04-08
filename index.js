@@ -268,3 +268,16 @@
 //   }
 // }
 // console.log(twoSum([2, 7, 11, 15], 13));
+
+
+
+// find the index from elements started repeating
+const repeating = (arr)=>{
+  let set = new Set();
+  for(let num of arr){
+    set.add(num)
+  }
+  return set.size
+}
+
+console.log(repeating([1,2,3,4,5,6,1,2]));
