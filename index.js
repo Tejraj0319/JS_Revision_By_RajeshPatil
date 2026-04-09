@@ -272,12 +272,28 @@
 
 
 // find the index from elements started repeating
-const repeating = (arr)=>{
-  let set = new Set();
-  for(let num of arr){
-    set.add(num)
-  }
-  return set.size
-}
+// const repeating = (arr)=>{
+//   let set = new Set();
+//   for(let num of arr){
+//     set.add(num)
+//   }
+//   return set.size
+// }
+// console.log(repeating([1,2,3,4,5,6,1,2]));
 
-console.log(repeating([1,2,3,4,5,6,1,2]));
+
+
+// Longest Substring Without Repeating Characters
+const longestSubstring= (s)=>{
+  let maxlength = 0;
+  let arr = []
+  for(let char of s){
+    while(arr.includes(char)){
+      arr.shift()
+    }
+    arr.push(char)
+    maxlength = Math.max(maxlength, arr.length)
+  }
+  return maxlength
+}
+console.log(longestSubstring("abcabcbb"));

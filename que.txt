@@ -9,3 +9,4 @@ Sort Array by Parity(Even first, then Odd)
 Find First Non-Repeating Element
 Find Pair with Given Sum
 find the index from elements started repeating
+Longest Substring Without Repeating Characters
