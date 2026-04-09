@@ -391,10 +391,12 @@ console.log(myArr.flat(2));
 
 console.log(5 % 2) // will give reminder
 console.log(5 / 2) // will give quotient
-console.log(5 & 2) // 1 1 = 1 remaining 0
-console.log(5 | 2) // 0 0 = 0 remaining 1
+console.log(5 & 2) // remember oppo of or 
+console.log(5 | 2) // OR =>  0 0 = 0 remaining 1
 console.log(5 << 2)
 console.log(5 >> 2)
+console.log(12**2) // power
+console.log(12^13) // bitwise XOR operator (1^1 = 0), (0^0 = 0), (1^0 = 1), (0^1  = 1)
 let x = 5;
 console.log(--x);
 let y = 5;
