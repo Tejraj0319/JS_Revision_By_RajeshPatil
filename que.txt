@@ -1,3 +1,4 @@
+Check if a string is a palindrome
 Move All Zeros to End
 Reverse Words in a Sentence
 Count frequency of each character in a string.
@@ -10,3 +11,6 @@ Find First Non-Repeating Element
 Find Pair with Given Sum
 find the index from elements started repeating
 Longest Substring Without Repeating Characters
+Find the Longest Common Prefix
+Find the Maximum Subarray Sum (Kadane’s Algorithm)
+Find the Longest Common Prefix

@@ -57,6 +57,7 @@
 
 
 
+// Check if a string is a palindrome
 // let str = "madam";
 // let reversed = str.split("").reverse().join("")
 // if(str == reversed){
@@ -297,3 +298,42 @@ const longestSubstring= (s)=>{
   return maxlength
 }
 console.log(longestSubstring("abcabcbb"));
+
+
+// Find the Maximum Subarray Sum (Kadane’s Algorithm)
+// const maxSubArray = (arr)=>{
+//   let currentSum = 0;
+//   let maxSum = 0;
+//   for(let num of arr){
+//     let sum = currentSum + num;
+//     if(sum < 0){
+//       currentSum = 0
+//     }
+//     else{
+//       currentSum = sum;
+//     }
+//     maxSum = Math.max(maxSum, currentSum);
+//   }
+//   return maxSum;
+// }
+// console.log(maxSubArray([-2,1,-3,4,-1,3,1,-5,4])); 
+
+
+
+// Find the Longest Common Prefix
+const longestCommonPrefix = (str)=>{
+  str.sort();
+  let firstWord = str[0]
+  let lastWord = str[str.length-1]
+  let prefix = ""
+  for(let i = 0; i < firstWord.length && i < lastWord.length; i++){
+    if(firstWord.charAt(i) == lastWord.charAt(i)){
+      prefix += firstWord.charAt(i)
+    }
+    else{
+      break
+    }
+  }
+  return prefix;
+}
+console.log(longestCommonPrefix(["apple", "app", "application"])); 
