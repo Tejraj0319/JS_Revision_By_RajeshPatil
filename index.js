@@ -285,19 +285,19 @@
 
 
 // Longest Substring Without Repeating Characters
-const longestSubstring= (s)=>{
-  let maxlength = 0;
-  let arr = []
-  for(let char of s){
-    while(arr.includes(char)){
-      arr.shift()
-    }
-    arr.push(char)
-    maxlength = Math.max(maxlength, arr.length)
-  }
-  return maxlength
-}
-console.log(longestSubstring("abcabcbb"));
+// const longestSubstring= (s)=>{
+//   let maxlength = 0;
+//   let arr = []
+//   for(let char of s){
+//     while(arr.includes(char)){
+//       arr.shift()
+//     }
+//     arr.push(char)
+//     maxlength = Math.max(maxlength, arr.length)
+//   }
+//   return maxlength
+// }
+// console.log(longestSubstring("abcabcbb"));
 
 
 // Find the Maximum Subarray Sum (Kadane’s Algorithm)
