@@ -321,19 +321,37 @@
 
 
 // Find the Longest Common Prefix
-const longestCommonPrefix = (str)=>{
-  str.sort();
-  let firstWord = str[0]
-  let lastWord = str[str.length-1]
-  let prefix = ""
-  for(let i = 0; i < firstWord.length && i < lastWord.length; i++){
-    if(firstWord.charAt(i) == lastWord.charAt(i)){
-      prefix += firstWord.charAt(i)
-    }
-    else{
-      break
+// const longestCommonPrefix = (str)=>{
+//   str.sort();
+//   let firstWord = str[0]
+//   let lastWord = str[str.length-1]
+//   let prefix = ""
+//   for(let i = 0; i < firstWord.length && i < lastWord.length; i++){
+//     if(firstWord.charAt(i) == lastWord.charAt(i)){
+//       prefix += firstWord.charAt(i)
+//     }
+//     else{
+//       break
+//     }
+//   }
+//   return prefix;
+// }
+// console.log(longestCommonPrefix(["apple", "app", "application"])); 
+
+
+
+// Find the Intersection of Two Arrays
+const intersection = (arr1,arr2)=>{
+  let newArr = [];
+  for(let i = 0; i < arr1.length; i++){
+    let index = arr2.indexOf(arr1[i])
+    // 1 found, -1 not found
+    if(index !== -1){
+      newArr.push(arr1[i]);
+      arr2.splice(index,1)
     }
   }
-  return prefix;
+  return newArr;
 }
-console.log(longestCommonPrefix(["apple", "app", "application"])); 
+
+console.log(intersection([1,2,2,3,4], [2,2,4,6,1]));
