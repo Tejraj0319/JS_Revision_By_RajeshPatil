@@ -341,17 +341,40 @@
 
 
 // Find the Intersection of Two Arrays
-const intersection = (arr1,arr2)=>{
-  let newArr = [];
-  for(let i = 0; i < arr1.length; i++){
-    let index = arr2.indexOf(arr1[i])
-    // 1 found, -1 not found
-    if(index !== -1){
-      newArr.push(arr1[i]);
-      arr2.splice(index,1)
-    }
-  }
-  return newArr;
-}
+// const intersection = (arr1,arr2)=>{
+//   let newArr = [];
+//   for(let i = 0; i < arr1.length; i++){
+//     let index = arr2.indexOf(arr1[i])
+//     // 1 found, -1 not found
+//     if(index !== -1){
+//       newArr.push(arr1[i]);
+//       arr2.splice(index,1)
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(intersection([1,2,2,3,4], [2,2,4,6,1]));
 
-console.log(intersection([1,2,2,3,4], [2,2,4,6,1]));
+
+
+// Check if Two Strings are Isomorphic
+const isIsomorphic = (str1, str2)=>{
+  if(str1.length != str2.length)return false;
+  let obj1 = {}
+  let obj2 = {}
+  for(let i = 0; i < str1.length; i++){
+    let char1 = str1[i]
+    let char2 = str2[i]
+    if(obj1[char1] && obj1[char1] !== char2){
+      return false;
+    }
+    if(obj2[char2] && obj2[char2] !== char1){
+      return false;
+    }
+    obj1[char1] = char2
+    obj2[char2] = char1
+  }
+  return true;
+}
+console.log(isIsomorphic("egg", "add"))
+
