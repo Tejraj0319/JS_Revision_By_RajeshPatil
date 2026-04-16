@@ -358,23 +358,40 @@
 
 
 // Check if Two Strings are Isomorphic
-const isIsomorphic = (str1, str2)=>{
-  if(str1.length != str2.length)return false;
-  let obj1 = {}
-  let obj2 = {}
-  for(let i = 0; i < str1.length; i++){
-    let char1 = str1[i]
-    let char2 = str2[i]
-    if(obj1[char1] && obj1[char1] !== char2){
-      return false;
-    }
-    if(obj2[char2] && obj2[char2] !== char1){
-      return false;
-    }
-    obj1[char1] = char2
-    obj2[char2] = char1
-  }
-  return true;
-}
-console.log(isIsomorphic("egg", "add"))
+// const isIsomorphic = (str1, str2)=>{
+//   if(str1.length != str2.length)return false;
+//   let obj1 = {}
+//   let obj2 = {}
+//   for(let i = 0; i < str1.length; i++){
+//     let char1 = str1[i]
+//     let char2 = str2[i]
+//     if(obj1[char1] && obj1[char1] !== char2){
+//       return false;
+//     }
+//     if(obj2[char2] && obj2[char2] !== char1){
+//       return false;
+//     }
+//     obj1[char1] = char2
+//     obj2[char2] = char1
+//   }
+//   return true;
+// }
+// console.log(isIsomorphic("egg", "add"))
+
+
+
+// Find the First Unique Character in a String
+// const firstUniqueChar = (str)=>{
+//   let freq = {}
+//   for(let char of str){
+//     freq[char] = (freq[char] || 0) + 1;
+//   }
+//   for(let char of str){
+//     if(freq[char] === 1){
+//       return char;
+//       break;
+//     }
+//   }
+// }
+// console.log(firstUniqueChar("loveleetcode")); 
 

@@ -16,3 +16,4 @@ Find the Maximum Subarray Sum (Kadane’s Algorithm)
 Find the Longest Common Prefix
 Find the Intersection of Two Arrays
 Check if Two Strings are Isomorphic
+Find the First Unique Character in a String
