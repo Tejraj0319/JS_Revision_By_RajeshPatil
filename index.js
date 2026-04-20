@@ -397,17 +397,35 @@
 
 
 // toLowerCase
-const toLowerCase = (str) => {
-    let result = "";
-    for (let i = 0; i < str.length; i++) {
-        let charCode = str.charCodeAt(i)
-        if (charCode >= 65 && charCode <= 90) {
-            result += String.fromCharCode(charCode + 32)
-        }
-        else {
-            result += str[i];
-        }
+// const toLowerCase = (str) => {
+//     let result = "";
+//     for (let i = 0; i < str.length; i++) {
+//         let charCode = str.charCodeAt(i)
+//         if (charCode >= 65 && charCode <= 90) {
+//             result += String.fromCharCode(charCode + 32)
+//         }
+//         else {
+//             result += str[i];
+//         }
+//     }
+//     return result
+// }
+// console.log(toLowerCase("RAJESH aNANta paTIL"))
+
+
+
+// Product of Array Except Self
+const productExceptSelf = (arr)=>{
+  let newArr = []
+  for(let i = 0; i < arr.length; i++){
+    let prod = 1;
+    for(let j = 0; j < arr.length; j++){
+      if(i != j){
+        prod = prod * arr[j]
+      }
+      newArr[i] = prod
     }
-    return result
+  }
+  return newArr;
 }
-console.log(toLowerCase("RAJESH aNANta paTIL"))
+console.log(productExceptSelf([1, 2, 3, 4])); 
