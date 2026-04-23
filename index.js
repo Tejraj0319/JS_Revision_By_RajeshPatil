@@ -415,17 +415,36 @@
 
 
 // Product of Array Except Self
-const productExceptSelf = (arr)=>{
-  let newArr = []
-  for(let i = 0; i < arr.length; i++){
-    let prod = 1;
-    for(let j = 0; j < arr.length; j++){
-      if(i != j){
-        prod = prod * arr[j]
-      }
-      newArr[i] = prod
-    }
-  }
-  return newArr;
-}
-console.log(productExceptSelf([1, 2, 3, 4])); 
+// const productExceptSelf = (arr)=>{
+//   let newArr = []
+//   for(let i = 0; i < arr.length; i++){
+//     let prod = 1;
+//     for(let j = 0; j < arr.length; j++){
+//       if(i != j){
+//         prod = prod * arr[j]
+//       }
+//       newArr[i] = prod
+//     }
+//   }
+//   return newArr;
+// }
+// console.log(productExceptSelf([1, 2, 3, 4])); 
+
+
+
+// Rotate Array by K Steps (Right Rotation)
+// const rotateArray = (arr, k)=>{
+//     const result = [];
+//     let n = arr.length;
+//     for(let i = n - k; i < n; i ++){
+//         result.push(arr[i])
+//     }
+//     for(let i = 0; i < n - k; i ++){
+//         result.push(arr[i])
+//     }
+//     return result;
+// }
+// console.log(rotateArray([1,2,3,4,5,6,7,8,9], 2));
+
+
+
