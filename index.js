@@ -447,4 +447,19 @@
 // console.log(rotateArray([1,2,3,4,5,6,7,8,9], 2));
 
 
-
+// Find Duplicate Elements in an Array
+const findDuplicates = (arr)=>{
+  const map = {};
+  const duplicates = [];
+  for(let num of arr){
+    map[num] = (map[num] || 0 ) + 1
+  }
+  
+  for(let key in map){
+    if(map[key] > 1){
+      duplicates.push(Number(key))
+    }
+  }
+  return duplicates;
+}
+console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1])); 
