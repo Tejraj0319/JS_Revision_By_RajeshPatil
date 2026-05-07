@@ -21,3 +21,4 @@ toLowerCase
 Product of Array Except Self
 Rotate Array by K Steps (Right Rotation)
 Find Duplicate Elements in an Array
+Single number

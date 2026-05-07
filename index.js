@@ -448,18 +448,30 @@
 
 
 // Find Duplicate Elements in an Array
-const findDuplicates = (arr)=>{
-  const map = {};
-  const duplicates = [];
-  for(let num of arr){
-    map[num] = (map[num] || 0 ) + 1
+// const findDuplicates = (arr)=>{
+//   const map = {};
+//   const duplicates = [];
+//   for(let num of arr){
+//     map[num] = (map[num] || 0 ) + 1
+//   }
+
+//   for(let key in map){
+//     if(map[key] > 1){
+//       duplicates.push(Number(key))
+//     }
+//   }
+//   return duplicates;
+// }
+// console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1])); 
+
+
+// Single number
+var singleNumber = (arr) => {
+  let xor = 0;
+  for (let num of arr) {
+    xor = xor ^ num
   }
-  
-  for(let key in map){
-    if(map[key] > 1){
-      duplicates.push(Number(key))
-    }
-  }
-  return duplicates;
+  return xor;
 }
-console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1])); 
+console.log(singleNumber([1, 1, 2, 2, 4]))
+
