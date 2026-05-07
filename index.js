@@ -466,12 +466,26 @@
 
 
 // Single number
-var singleNumber = (arr) => {
+// var singleNumber = (arr) => {
+//   let xor = 0;
+//   for (let num of arr) {
+//     xor = xor ^ num
+//   }
+//   return xor;
+// }
+// console.log(singleNumber([1, 1, 2, 2, 4]))
+
+
+// Find Missing no using xor
+const findMissing = (arr,n)=>{
   let xor = 0;
-  for (let num of arr) {
-    xor = xor ^ num
+  for(let i = 1; i <= n; i++){
+    xor ^= i
   }
-  return xor;
+  for(let num of arr){
+    xor ^= num
+  }
+  return xor
 }
-console.log(singleNumber([1, 1, 2, 2, 4]))
+console.log(findMissing([1,2,3,5], 5));
 
