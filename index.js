@@ -477,15 +477,29 @@
 
 
 // Find Missing no using xor
-const findMissing = (arr,n)=>{
-  let xor = 0;
-  for(let i = 1; i <= n; i++){
-    xor ^= i
-  }
-  for(let num of arr){
-    xor ^= num
-  }
-  return xor
-}
-console.log(findMissing([1,2,3,5], 5));
+// const findMissing = (arr,n)=>{
+//   let xor = 0;
+//   for(let i = 1; i <= n; i++){
+//     xor ^= i
+//   }
+//   for(let num of arr){
+//     xor ^= num
+//   }
+//   return xor
+// }
+// console.log(findMissing([1,2,3,5], 5));
 
+
+// Custom Reduce Function Implementation
+const myFunction = (arr, callback, initialValue) => {
+  let accumulator = initialValue;
+  for (let i = 0; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i])
+  }
+  return accumulator
+}
+const num = [1, 2, 3, 4]
+const result = myFunction(num, function (acc, curr) {
+  return acc + curr;
+}, 0)
+console.log("Sum: ", result)
