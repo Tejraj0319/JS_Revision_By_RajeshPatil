@@ -24,3 +24,4 @@ Find Duplicate Elements in an Array
 Single number
 Find Missing no using xor
 Custom Reduce Function Implementation
+String Compression

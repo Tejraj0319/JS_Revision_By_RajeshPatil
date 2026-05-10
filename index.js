@@ -491,15 +491,34 @@
 
 
 // Custom Reduce Function Implementation
-const myFunction = (arr, callback, initialValue) => {
-  let accumulator = initialValue;
-  for (let i = 0; i < arr.length; i++) {
-    accumulator = callback(accumulator, arr[i])
+// const myFunction = (arr, callback, initialValue) => {
+//   let accumulator = initialValue;
+//   for (let i = 0; i < arr.length; i++) {
+//     accumulator = callback(accumulator, arr[i])
+//   }
+//   return accumulator
+// }
+// const num = [1, 2, 3, 4]
+// const result = myFunction(num, function (acc, curr) {
+//   return acc + curr;
+// }, 0)
+// console.log("Sum: ", result)
+
+
+// String Compression
+const stringCompression = (str)=>{
+  let count = 1;
+  let newStr ="";
+  for(let i = 1; i <= str.length; i++){
+    if(str.charAt(i-1) === str.charAt(i)){
+      count++;
+    }
+    else{
+      newStr += str.charAt(i-1) + count;
+      count = 1;
+    }
   }
-  return accumulator
+  return newStr.length < str.length ? newStr : str;
 }
-const num = [1, 2, 3, 4]
-const result = myFunction(num, function (acc, curr) {
-  return acc + curr;
-}, 0)
-console.log("Sum: ", result)
+console.log(stringCompression("aabcccccaaa"))
+
