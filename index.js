@@ -506,19 +506,38 @@
 
 
 // String Compression
-const stringCompression = (str)=>{
-  let count = 1;
-  let newStr ="";
-  for(let i = 1; i <= str.length; i++){
-    if(str.charAt(i-1) === str.charAt(i)){
-      count++;
-    }
-    else{
-      newStr += str.charAt(i-1) + count;
-      count = 1;
-    }
-  }
-  return newStr.length < str.length ? newStr : str;
-}
-console.log(stringCompression("aabcccccaaa"))
+// const stringCompression = (str)=>{
+//   let count = 1;
+//   let newStr ="";
+//   for(let i = 1; i <= str.length; i++){
+//     if(str.charAt(i-1) === str.charAt(i)){
+//       count++;
+//     }
+//     else{
+//       newStr += str.charAt(i-1) + count;
+//       count = 1;
+//     }
+//   }
+//   return newStr.length < str.length ? newStr : str;
+// }
+// console.log(stringCompression("aabcccccaaa"))
+
+
+// Valid Parentheses
+// const isValid = (str) => {
+//   let stack = [];
+//   for (let element of str) {
+//     if (element === "(" || element === "{" || element === "[") {
+//       stack.push(element)
+//     }
+//     else {
+//       let last = stack.pop()
+//       if ((element === ")" && last != "(") || (element === "}" && last !== "{") || (element === "]" && last !== "[")) {
+//         return false;
+//       }
+//     }
+//   }
+//   return stack.length === 0;
+// }
+// console.log(isValid("({[]})"));
 
