@@ -523,6 +523,7 @@
 // console.log(stringCompression("aabcccccaaa"))
 
 
+
 // Valid Parentheses
 // const isValid = (str) => {
 //   let stack = [];
@@ -544,21 +545,35 @@
 
 
 // maximum product of any continuous subarray
-const maxProductSubarray = (nums) => {
-    let max = nums[0]; //-2, 3, -6
-    let min = nums[0]; //-2, -6, 3
-    let result = nums[0]; //-2, 3, 24
-    for (let i = 1; i < nums.length; i++) {
-        // i= 3, -4
-        // swap if negative number
-        if (nums[i] < 0) {
-            [max, min] = [min, max];
-        }
-        max = Math.max(nums[i], nums[i] * max); // (3,3*-2)=3, (-4, -4*-6)=24
-        min = Math.min(nums[i], nums[i] * min); // (3,3*-2)=-6, (-4, -4*3)= -12
+// const maxProductSubarray = (nums) => {
+//     let max = nums[0]; //-2, 3, -6
+//     let min = nums[0]; //-2, -6, 3
+//     let result = nums[0]; //-2, 3, 24
+//     for (let i = 1; i < nums.length; i++) {
+//         // i= 3, -4
+//         // swap if negative number
+//         if (nums[i] < 0) {
+//             [max, min] = [min, max];
+//         }
+//         max = Math.max(nums[i], nums[i] * max); // (3,3*-2)=3, (-4, -4*-6)=24
+//         min = Math.min(nums[i], nums[i] * min); // (3,3*-2)=-6, (-4, -4*3)= -12
+//         result = Math.max(result, max); //(3, 24) = 24
+//     }
+//     return result;
+// };
+// console.log(maxProductSubarray([-2, 3, -4]));
 
-        result = Math.max(result, max); //(3, 24) = 24
+
+// Group Anagrams
+const groupAnagrams = (strs)=>{
+  const map = {}
+  for(let str of strs){
+    const key = str.split("").sort().join("")
+    if(!map[key]){
+      map[key] = [];
     }
-    return result;
-};
-console.log(maxProductSubarray([-2, 3, -4]));
+    map[key].push(str)
+  }
+  return Object.values(map);
+}
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
