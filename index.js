@@ -564,16 +564,33 @@
 // console.log(maxProductSubarray([-2, 3, -4]));
 
 
+
 // Group Anagrams
-const groupAnagrams = (strs)=>{
-  const map = {}
-  for(let str of strs){
-    const key = str.split("").sort().join("")
-    if(!map[key]){
-      map[key] = [];
+// const groupAnagrams = (strs)=>{
+//   const map = {}
+//   for(let str of strs){
+//     const key = str.split("").sort().join("")
+//     if(!map[key]){
+//       map[key] = [];
+//     }
+//     map[key].push(str)
+//   }
+//   return Object.values(map);
+// }
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+
+
+// Find the Majority Element(element that appears more than n/2 times.)
+const majorityElement = (arr)=>{
+    const map = {};
+    for(let num of arr){
+        map[num] = (map[num] || 0)+1
     }
-    map[key].push(str)
-  }
-  return Object.values(map);
+    for(let key in map){
+        if(map[key] > arr.length/2){
+            return key;
+        }
+    }
 }
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(majorityElement([2,1,1,3,3,3,3,3]));
