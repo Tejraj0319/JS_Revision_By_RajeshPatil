@@ -582,15 +582,34 @@
 
 
 // Find the Majority Element(element that appears more than n/2 times.)
-const majorityElement = (arr)=>{
-    const map = {};
+// const majorityElement = (arr)=>{
+//     const map = {};
+//     for(let num of arr){
+//         map[num] = (map[num] || 0)+1
+//     }
+//     for(let key in map){
+//         if(map[key] > arr.length/2){
+//             return key;
+//         }
+//     }
+// }
+// console.log(majorityElement([2,1,1,3,3,3,3,3]));
+
+
+
+// Find the Maximum Consecutive 1's in an Array
+const maxConsecutiveOnes = (arr)=>{
+    let count = 0;
+    let maxCount = 0;
     for(let num of arr){
-        map[num] = (map[num] || 0)+1
-    }
-    for(let key in map){
-        if(map[key] > arr.length/2){
-            return key;
+        if(num === 1){
+            count++
+            maxCount = Math.max(count, maxCount);
+        }
+        else{
+            count = 0
         }
     }
+    return maxCount;
 }
-console.log(majorityElement([2,1,1,3,3,3,3,3]));
+console.log(maxConsecutiveOnes([1,1,0,1,1,1]))
