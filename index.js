@@ -598,18 +598,37 @@
 
 
 // Find the Maximum Consecutive 1's in an Array
-const maxConsecutiveOnes = (arr)=>{
-    let count = 0;
-    let maxCount = 0;
-    for(let num of arr){
-        if(num === 1){
-            count++
-            maxCount = Math.max(count, maxCount);
+// const maxConsecutiveOnes = (arr)=>{
+//     let count = 0;
+//     let maxCount = 0;
+//     for(let num of arr){
+//         if(num === 1){
+//             count++
+//             maxCount = Math.max(count, maxCount);
+//         }
+//         else{
+//             count = 0
+//         }
+//     }
+//     return maxCount;
+// }
+// console.log(maxConsecutiveOnes([1,1,0,1,1,1]))
+
+
+
+// Two Sum
+const twoSum = (arr, target)=>{
+    let i = 0;
+    let j = arr.length - 1;
+    while(i < j){
+        if(arr[i] + arr[j] == target) return [i, j]
+        if(arr[i] + arr[j] < target){
+            i++;
         }
         else{
-            count = 0
+            j--;
         }
     }
-    return maxCount;
+    return [i,j];
 }
-console.log(maxConsecutiveOnes([1,1,0,1,1,1]))
+console.log(twoSum([2, 11, 7, 15], 9));
