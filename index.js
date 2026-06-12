@@ -617,18 +617,31 @@
 
 
 // Two Sum
-const twoSum = (arr, target)=>{
-    let i = 0;
-    let j = arr.length - 1;
-    while(i < j){
-        if(arr[i] + arr[j] == target) return [i, j]
-        if(arr[i] + arr[j] < target){
-            i++;
+// const twoSum = (arr, target)=>{
+//     let i = 0;
+//     let j = arr.length - 1;
+//     while(i < j){
+//         if(arr[i] + arr[j] == target) return [i, j]
+//         if(arr[i] + arr[j] < target){
+//             i++;
+//         }
+//         else{
+//             j--;
+//         }
+//     }
+//     return [i,j];
+// }
+// console.log(twoSum([2, 11, 7, 15], 9));
+
+
+// Find the First Recurring Character
+const firstRecurringChar = (str)=>{
+    let seen = new Set()
+    for(let char of str){
+        if(seen.has(char)){
+            return char
         }
-        else{
-            j--;
-        }
+        seen.add(char)
     }
-    return [i,j];
 }
-console.log(twoSum([2, 11, 7, 15], 9));
+console.log(firstRecurringChar("abbcc"));
