@@ -634,14 +634,44 @@
 // console.log(twoSum([2, 11, 7, 15], 9));
 
 
+
 // Find the First Recurring Character
-const firstRecurringChar = (str)=>{
-    let seen = new Set()
-    for(let char of str){
-        if(seen.has(char)){
-            return char
+// const firstRecurringChar = (str)=>{
+//     let seen = new Set()
+//     for(let char of str){
+//         if(seen.has(char)){
+//             return char
+//         }
+//         seen.add(char)
+//     }
+// }
+// console.log(firstRecurringChar("abbcc"));
+
+
+
+// Merge Two Sorted Arrays
+const mergeSortedArrays = (arr1, arr2) => {
+    let i = 0;
+    let j = 0;
+    let result = [];
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            result.push(arr1[i])
+            i++;
         }
-        seen.add(char)
+        else {
+            result.push(arr2[j])
+            j++;
+        }
     }
+    while (i < arr1.length) {
+        result.push(arr1[i])
+        i++;
+    }
+    while (j < arr2.length) {
+        result.push(arr2[j])
+        j++;
+    }
+    return result;
 }
-console.log(firstRecurringChar("abbcc"));
+console.log(mergeSortedArrays([1, 2, 3, 5, 7], [4, 6]));

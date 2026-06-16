@@ -32,3 +32,4 @@ Find the Majority Element(element that appears more than n/2 times.)
 Find the Maximum Consecutive 1's in an Array
 Two sum
 Find the First Recurring Character
+Merge Two Sorted Arrays
