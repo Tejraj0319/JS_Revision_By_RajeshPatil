@@ -650,28 +650,46 @@
 
 
 // Merge Two Sorted Arrays
-const mergeSortedArrays = (arr1, arr2) => {
-    let i = 0;
-    let j = 0;
-    let result = [];
-    while (i < arr1.length && j < arr2.length) {
-        if (arr1[i] < arr2[j]) {
-            result.push(arr1[i])
-            i++;
+// const mergeSortedArrays = (arr1, arr2) => {
+//     let i = 0;
+//     let j = 0;
+//     let result = [];
+//     while (i < arr1.length && j < arr2.length) {
+//         if (arr1[i] < arr2[j]) {
+//             result.push(arr1[i])
+//             i++;
+//         }
+//         else {
+//             result.push(arr2[j])
+//             j++;
+//         }
+//     }
+//     while (i < arr1.length) {
+//         result.push(arr1[i])
+//         i++;
+//     }
+//     while (j < arr2.length) {
+//         result.push(arr2[j])
+//         j++;
+//     }
+//     return result;
+// }
+// console.log(mergeSortedArrays([1, 2, 3, 5, 7], [4, 6]));
+
+
+
+// Separate Numbers and Strings in an Array
+const separate = (arr)=>{
+    let strArray = [];
+    let numArray = [];
+    for(let i in arr){
+        if(isNaN(arr[i])){
+            strArray.push(arr[i])
         }
-        else {
-            result.push(arr2[j])
-            j++;
+        else{
+            numArray.push(arr[i])
         }
     }
-    while (i < arr1.length) {
-        result.push(arr1[i])
-        i++;
-    }
-    while (j < arr2.length) {
-        result.push(arr2[j])
-        j++;
-    }
-    return result;
+    return [strArray, numArray]
 }
-console.log(mergeSortedArrays([1, 2, 3, 5, 7], [4, 6]));
+console.log(separate([10,'a','b','c',11,4]))
