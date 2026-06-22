@@ -679,17 +679,40 @@
 
 
 // Separate Numbers and Strings in an Array
-const separate = (arr)=>{
-    let strArray = [];
-    let numArray = [];
-    for(let i in arr){
-        if(isNaN(arr[i])){
-            strArray.push(arr[i])
+// const separate = (arr)=>{
+//     let strArray = [];
+//     let numArray = [];
+//     for(let i in arr){
+//         if(isNaN(arr[i])){
+//             strArray.push(arr[i])
+//         }
+//         else{
+//             numArray.push(arr[i])
+//         }
+//     }
+//     return [strArray, numArray]
+// }
+// console.log(separate([10,'a','b','c',11,4]))
+
+
+
+// Longest Substring with At Most K Distinct Characters
+const longestSubstringKDistinct = (s, k) => {
+    let left = 0;
+    let maxLength = 0;
+    let count = {};
+    for (let right = 0; right < s.length; right++) {
+        let char = s[right];
+        count[char] = (count[char] || 0) + 1;
+        while (Object.keys(count).length > k) {
+            count[s[left]]--;
+            if (count[s[left]] === 0) {
+                delete count[s[left]];
+            }
+            left++;
         }
-        else{
-            numArray.push(arr[i])
-        }
+        maxLength = Math.max(maxLength, right - left + 1);
     }
-    return [strArray, numArray]
-}
-console.log(separate([10,'a','b','c',11,4]))
+    return maxLength;
+};
+console.log(longestSubstringKDistinct("eceba", 2));
