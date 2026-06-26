@@ -119,10 +119,11 @@
 // }
 // sendMessage()
 // {
-//   var blockScope = "blockScope"
+//   let blockScope = "blockScope"
 //   console.log(globalScope)
 //   console.log(blockScope)
 // }
+// NOTE: VAR IS FUNCTION-SCOPED NOT BLOCK-SCOPED event if var is defined inside block scope it can be accessed outside of block scope as well
 
 
 
@@ -389,18 +390,18 @@ console.log(myArr.flat(2));
 
 
 
-console.log(5 % 2) // will give reminder
-console.log(5 / 2) // will give quotient
-console.log(5 & 2) // remember oppo of or 
+console.log(6 % 2) // will give reminder
+console.log(6 / 2) // will give quotient
+console.log(5 & 2) // remember opposite of or 
 console.log(5 | 2) // OR =>  0 0 = 0 remaining 1
 console.log(5 << 2)
 console.log(5 >> 2)
 console.log(12**2) // power
 console.log(12^13) // bitwise XOR operator (1^1 = 0), (0^0 = 0), (1^0 = 1), (0^1  = 1)
 let x = 5;
-console.log(--x);
+console.log(--x); //4
 let y = 5;
-console.log(++y);
+console.log(++y); //6
 var z = 0;
 z = ++z
 // z = z++ // this will first assign z to 0 and then increment it, so z will be 0 only

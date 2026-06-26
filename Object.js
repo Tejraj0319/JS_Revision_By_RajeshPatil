@@ -11,16 +11,16 @@ const obj1 = new Object({
 })
 console.log(obj1)
 
-// let changedName = (person.name = "Om")
-// let name = person.name
-// let age = person["age"]
-// let deletedProperty = delete person.address
+let changedName = (person.name = "Om")
+let name = person.name
+let age = person["age"]
+let deletedProperty = delete person.address
 
-// console.log(`My name is ${person.name} and I am ${age} years old`)
-// console.log(person)
+console.log(`My name is ${person.name} and I am ${age} years old`)
+console.log(person)
 
-// let isAvaliable = "name" in person
-// console.log(isAvaliable)
+let isAvaliable = "name" in person
+console.log(isAvaliable)
 
 for(let i in person){
     console.log(`${i} = ${person[i]}`)
