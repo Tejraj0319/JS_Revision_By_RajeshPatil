@@ -2,6 +2,7 @@
 // 2 3 
 // 4 5 6 
 // 7 8 9 10 
+
 // let n = 4;
 // let num = 1;
 // for (let i = 1; i <= n; i++) {
@@ -18,6 +19,7 @@
 // * * *
 // * * * *
 // * * * * *
+
 // let n  = 5;
 // for(let i = 1; i <= n; i++){
 //   let pattern = "";
@@ -32,6 +34,7 @@
 // * * *
 // * *
 // *
+
 // let n  = 5;
 // for(let i = 1; i <= n; i++){
 //   let pattern = "";
@@ -46,6 +49,7 @@
 //      * * *
 //    * * * *
 //  * * * * *
+
 // let n  = 5;
 // for(let i = 1; i <= n; i++){
 //   let pattern = "";
@@ -64,6 +68,7 @@
 //        * * *
 //          * *
 //            *
+
 // let n  = 5;
 // for(let i = 1; i <= n; i++){
 //   let pattern = "";
@@ -82,6 +87,7 @@
 // *       *
 // *       *
 // * * * * *
+
 // let n = 5;
 // for(let i = 1; i <= n ; i++){
 //     let pattern = "";
@@ -101,6 +107,7 @@
 // *   *
 // *     *
 // * * * * *
+
 // let n = 5;
 // for(let i = 1; i <= n ; i++){
 //     let pattern = "";
@@ -120,6 +127,7 @@
 // *   *
 // * *
 // *
+
 // let n = 5;
 // for(let i = 1; i <= n; i++){
 //     let pattern = "";
@@ -138,6 +146,7 @@
 //       *   *
 //         * *
 //           *
+
 // let n = 5;
 // for (let i = 1; i <= n; i++) {
 //   let pattern = "";
@@ -188,14 +197,55 @@
 //   *   *   *   *   *   
 // *   *   *   *   *   *  
 
-let n = 5;
-for (let i = 0; i <= n; i++) {
-  let pattern = "";
-  for (let j = i; j <= n; j++) {
-    pattern += "  "
-  }
-  for (let k = 0; k <= i; k++) {
-    pattern += "*   "
-  }
-  console.log(pattern)
+// let n = 5;
+// for (let i = 0; i <= n; i++) {
+//   let pattern = "";
+//   for (let j = i; j <= n; j++) {
+//     pattern += "  "
+//   }
+//   for (let k = 0; k <= i; k++) {
+//     pattern += "*   "
+//   }
+//   console.log(pattern)
+// }
+
+
+
+
+  //         * 
+  //       * * * 
+  //     * * * * * 
+  //   * * * * * * * 
+  // * * * * * * * * * 
+  //   * * * * * * * 
+  //     * * * * * 
+  //       * * * 
+  //         * 
+
+n = 5
+for (let i = 1; i <= n; i++) {
+    let pattern = ""
+    for (let j = i; j <= n; j++) {
+        pattern += "  "
+    }
+    for(let k = 1; k <= i; k++){
+        pattern += "* "
+    }
+    for(let l = 1; l < i; l++){
+        pattern +="* "
+    }
+    console.log(pattern)
+}
+for (let i = 2; i <= n; i++) {
+    let pattern = ""
+    for (let j = 1; j <= i; j++) {
+        pattern += "  "
+    }
+    for(let k = i; k <= n; k++){
+        pattern += "* "
+    }
+    for(let l = i; l < n; l++){
+        pattern +="* "
+    }
+    console.log(pattern)
 }
