@@ -698,22 +698,35 @@
 
 
 // Longest Substring with At Most K Distinct Characters
-const longestSubstringKDistinct = (s, k) => {
-    let left = 0;
-    let maxLength = 0;
-    let count = {};
-    for (let right = 0; right < s.length; right++) {
-        let char = s[right];
-        count[char] = (count[char] || 0) + 1;
-        while (Object.keys(count).length > k) {
-            count[s[left]]--;
-            if (count[s[left]] === 0) {
-                delete count[s[left]];
-            }
-            left++;
+// const longestSubstringKDistinct = (s, k) => {
+//     let left = 0;
+//     let maxLength = 0;
+//     let count = {};
+//     for (let right = 0; right < s.length; right++) {
+//         let char = s[right];
+//         count[char] = (count[char] || 0) + 1;
+//         while (Object.keys(count).length > k) {
+//             count[s[left]]--;
+//             if (count[s[left]] === 0) {
+//                 delete count[s[left]];
+//             }
+//             left++;
+//         }
+//         maxLength = Math.max(maxLength, right - left + 1);
+//     }
+//     return maxLength;
+// };
+// console.log(longestSubstringKDistinct("eceba", 2));
+
+
+// isPrime
+const isPrime = (num) => {
+    if (num <= 1) return false;
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+            return false;
         }
-        maxLength = Math.max(maxLength, right - left + 1);
     }
-    return maxLength;
-};
-console.log(longestSubstringKDistinct("eceba", 2));
+    return true;
+}
+console.log(isPrime(3))
