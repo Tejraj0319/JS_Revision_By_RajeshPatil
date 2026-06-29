@@ -3,6 +3,7 @@ Move All Zeros to End
 Reverse Words in a Sentence
 Count frequency of each character in a string.
 Remove Duplicates from Array
+Write fibonacci series
 Find Second Largest Element in Array
 Check if two strings are anagrams
 Find Missing Number in Array (1 to n)
