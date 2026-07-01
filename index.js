@@ -747,7 +747,7 @@ const binarySearch = (arr, target) => {
             high = high - 1;
         }
         else {
-            low = low + 1;
+            low = mid + 1;
         }
     }
     return -1;
