@@ -719,14 +719,38 @@
 // console.log(longestSubstringKDistinct("eceba", 2));
 
 
+
 // isPrime
-const isPrime = (num) => {
-    if (num <= 1) return false;
-    for (let i = 2; i < num; i++) {
-        if (num % i == 0) {
-            return false;
+// const isPrime = (num) => {
+//     if (num <= 1) return false;
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(isPrime(3))
+
+
+
+// Binary Search: search for a target value in a sorted array
+const binarySearch = (arr, target) => {
+    let low = 0;
+    let high = arr.length - 1;
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        }
+        else if (arr[mid] > target) {
+            high = high - 1;
+        }
+        else {
+            low = low + 1;
         }
     }
-    return true;
+    return -1;
 }
-console.log(isPrime(3))
+const arr = [10, 20, 30, 40, 50, 60];
+console.log(binarySearch(arr, 40));
