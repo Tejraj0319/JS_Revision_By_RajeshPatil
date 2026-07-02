@@ -735,22 +735,55 @@
 
 
 // Binary Search: search for a target value in a sorted array
-const binarySearch = (arr, target) => {
-    let low = 0;
-    let high = arr.length - 1;
-    while (low <= high) {
-        let mid = Math.floor((low + high) / 2);
-        if (arr[mid] === target) {
-            return mid;
+// const binarySearch = (arr, target) => {
+//     let low = 0;
+//     let high = arr.length - 1;
+//     while (low <= high) {
+//         let mid = Math.floor((low + high) / 2);
+//         if (arr[mid] === target) {
+//             return mid;
+//         }
+//         else if (arr[mid] > target) {
+//             high = high - 1;
+//         }
+//         else {
+//             low = mid + 1;
+//         }
+//     }
+//     return -1;
+// }
+// const arr = [10, 20, 30, 40, 50, 60];
+// console.log(binarySearch(arr, 40));
+
+
+
+// LeetCode 394 - Decode String
+function decodeString(s) {
+    let stack = [];
+    let currentString = "";
+    let currentNumber = 0;
+
+    for (let ch of s) {
+        if (!isNaN(ch)) {
+            currentNumber = currentNumber * 10 + Number(ch)
         }
-        else if (arr[mid] > target) {
-            high = high - 1;
+        else if (ch === "[") {
+            stack.push(currentString)
+            stack.push(currentNumber)
+
+            currentString = "";
+            currentNumber = 0;
         }
-        else {
-            low = mid + 1;
+        else if(ch === "]"){
+            const repeat = stack.pop()
+            const prevStr = stack.pop()
+
+            currentString = prevStr + currentString.repeat(repeat)
+        }
+        else{
+            currentString += ch;
         }
     }
-    return -1;
+    return currentString;
 }
-const arr = [10, 20, 30, 40, 50, 60];
-console.log(binarySearch(arr, 40));
+console.log(decodeString("2[abc]3[cd]ef"));
