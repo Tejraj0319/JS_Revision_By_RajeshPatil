@@ -758,32 +758,52 @@
 
 
 // LeetCode 394 - Decode String
-function decodeString(s) {
-    let stack = [];
-    let currentString = "";
-    let currentNumber = 0;
+// function decodeString(s) {
+//     let stack = [];
+//     let currentString = "";
+//     let currentNumber = 0;
+//     for (let ch of s) {
+//         if (!isNaN(ch)) {
+//             currentNumber = currentNumber * 10 + Number(ch)
+//         }
+//         else if (ch === "[") {
+//             stack.push(currentString)
+//             stack.push(currentNumber)
+//             currentString = "";
+//             currentNumber = 0;
+//         }
+//         else if(ch === "]"){
+//             const repeat = stack.pop()
+//             const prevStr = stack.pop()
+//             currentString = prevStr + currentString.repeat(repeat)
+//         }
+//         else{
+//             currentString += ch;
+//         }
+//     }
+//     return currentString;
+// }
+// console.log(decodeString("2[abc]3[cd]ef"));
 
-    for (let ch of s) {
-        if (!isNaN(ch)) {
-            currentNumber = currentNumber * 10 + Number(ch)
-        }
-        else if (ch === "[") {
-            stack.push(currentString)
-            stack.push(currentNumber)
 
-            currentString = "";
-            currentNumber = 0;
-        }
-        else if(ch === "]"){
-            const repeat = stack.pop()
-            const prevStr = stack.pop()
 
-            currentString = prevStr + currentString.repeat(repeat)
+
+// LeetCode 121 - Best Time to Buy and Sell Stock
+const maxProfit = (arr) => {
+    let minPrice = arr[0];
+    let maxProfit = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > minPrice) {
+            const currentProfit = arr[i] - minPrice
+            maxProfit = Math.max(maxProfit, currentProfit)
         }
-        else{
-            currentString += ch;
+        else if (arr[i] == minPrice) {
+            minPrice = arr[i]
+        }
+        else {
+            minPrice = arr[i]
         }
     }
-    return currentString;
+    return maxProfit > 0 ? maxProfit : 0;
 }
-console.log(decodeString("2[abc]3[cd]ef"));
+console.log(maxProfit([3, 8, 2, 5, 1, 9])); 
