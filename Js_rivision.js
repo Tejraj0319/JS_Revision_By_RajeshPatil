@@ -20,6 +20,8 @@
 // console.log(isNaN(true))
 // console.log(isNaN(false))
 // console.log(isNaN(null))
+// console.log(isNaN(""))
+// console.log(isNaN(" "))
 
 
 //IIFE

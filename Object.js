@@ -1,15 +1,58 @@
-const person = {
-    name: "Rajesh",
-    age: 24,
-    address: "Pune"
-}
+// methods to create Object
 
+// 1. Using Object()
 const obj1 = new Object({
     name:"xyz",
     email:"xyz@gmail.com",
     password:"xyz@123"
 })
-console.log(obj1)
+
+// 2. Using class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const obj2 = new Person("Raj");
+console.log(obj2);
+
+
+// 3. Using Object.create()
+const person = {
+  greet() {
+    console.log("Hello");
+  }
+};
+const obj3 = Object.create(person);
+obj3.name = "Raj";
+console.log(obj3.name); 
+obj3.greet();           
+
+
+// 4. Using Object Literal (Most Common)
+const obj4 = {
+  name: "Raj"
+};
+console.log(obj4);
+
+// 5. Using a Constructor Function
+function Person(name) {
+  this.name = name;
+}
+const obj5 = new Person("Raj");
+console.log(obj5);
+
+
+
+// 6. Using the Object Constructor
+const obj6 = Object({
+  name: "Raj"
+});
+console.log(obj6);
+
+
+
+
 
 let changedName = (person.name = "Om")
 let name = person.name

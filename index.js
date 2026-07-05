@@ -789,21 +789,21 @@
 
 
 // LeetCode 121 - Best Time to Buy and Sell Stock
-const maxProfit = (arr) => {
-    let minPrice = arr[0];
-    let maxProfit = 0;
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > minPrice) {
-            const currentProfit = arr[i] - minPrice
-            maxProfit = Math.max(maxProfit, currentProfit)
-        }
-        else if (arr[i] == minPrice) {
-            minPrice = arr[i]
-        }
-        else {
-            minPrice = arr[i]
-        }
-    }
-    return maxProfit > 0 ? maxProfit : 0;
-}
-console.log(maxProfit([3, 8, 2, 5, 1, 9])); 
+// const maxProfit = (arr) => {
+//     let minPrice = arr[0];
+//     let maxProfit = 0;
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > minPrice) {
+//             const currentProfit = arr[i] - minPrice
+//             maxProfit = Math.max(maxProfit, currentProfit)
+//         }
+//         else if (arr[i] == minPrice) {
+//             minPrice = arr[i]
+//         }
+//         else {
+//             minPrice = arr[i]
+//         }
+//     }
+//     return maxProfit > 0 ? maxProfit : 0;
+// }
+// console.log(maxProfit([3, 8, 2, 5, 1, 9])); 
