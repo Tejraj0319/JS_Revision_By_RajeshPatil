@@ -40,3 +40,4 @@ isPrime
 Binary Search: search for a target value in a sorted array
 LeetCode 394 - Decode String (Medium)
 LeetCode 121 - Best Time to Buy and Sell Stock
+Tech Number

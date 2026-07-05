@@ -807,3 +807,36 @@
 //     return maxProfit > 0 ? maxProfit : 0;
 // }
 // console.log(maxProfit([3, 8, 2, 5, 1, 9])); 
+
+
+
+// Tech Number
+let digits = 0
+const countDigits = (n) => {
+    let temp = n
+    while (temp > 0) {
+        digits++;
+        temp = (temp / 10) | 0
+    }
+}
+const isTechNum = (num) => {
+    countDigits(num);
+    let halfLength = digits / 2;
+    if (digits % 2 !== 0) {
+        console.log("Not a techNumber!")
+    }
+    let divisor = 1;
+    for (let i = 0; i < halfLength; i++) {
+        divisor = divisor * 10;
+    }
+    let firstHalf = (num / divisor) | 0
+    let secondHalf = num % divisor
+    let sumAndSquareOfHalf = (firstHalf + secondHalf) ** 2;
+    if (sumAndSquareOfHalf === num) {
+        console.log("Is techNumber")
+    }
+    else {
+        console.log("Not a techNumber")
+    }
+}
+isTechNum(2025)
