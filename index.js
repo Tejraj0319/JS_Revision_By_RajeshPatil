@@ -811,32 +811,50 @@
 
 
 // Tech Number
-let digits = 0
-const countDigits = (n) => {
-    let temp = n
-    while (temp > 0) {
-        digits++;
-        temp = (temp / 10) | 0
+// let digits = 0
+// const countDigits = (n) => {
+//     let temp = n
+//     while (temp > 0) {
+//         digits++;
+//         temp = (temp / 10) | 0
+//     }
+// }
+// const isTechNum = (num) => {
+//     countDigits(num);
+//     let halfLength = digits / 2;
+//     if (digits % 2 !== 0) {
+//         console.log("Not a techNumber!")
+//     }
+//     let divisor = 1;
+//     for (let i = 0; i < halfLength; i++) {
+//         divisor = divisor * 10;
+//     }
+//     let firstHalf = (num / divisor) | 0
+//     let secondHalf = num % divisor
+//     let sumAndSquareOfHalf = (firstHalf + secondHalf) ** 2;
+//     if (sumAndSquareOfHalf === num) {
+//         console.log("Is techNumber")
+//     }
+//     else {
+//         console.log("Not a techNumber")
+//     }
+// }
+// isTechNum(2025)
+
+
+
+// LeetCode 643 – Maximum Average Subarray I
+const maximumAverageSubarrayI = (arr, k) => {
+    let windowSum = 0
+    for (let i = 0; i < k; i++) {
+        windowSum += arr[i]
     }
+    let maxSum = windowSum;
+    for (let i = k; i < arr.length; i++) {
+        windowSum += arr[i]
+        windowSum -= arr[i - k]
+        maxSum = Math.max(maxSum, windowSum)
+    }
+    return maxSum / k;
 }
-const isTechNum = (num) => {
-    countDigits(num);
-    let halfLength = digits / 2;
-    if (digits % 2 !== 0) {
-        console.log("Not a techNumber!")
-    }
-    let divisor = 1;
-    for (let i = 0; i < halfLength; i++) {
-        divisor = divisor * 10;
-    }
-    let firstHalf = (num / divisor) | 0
-    let secondHalf = num % divisor
-    let sumAndSquareOfHalf = (firstHalf + secondHalf) ** 2;
-    if (sumAndSquareOfHalf === num) {
-        console.log("Is techNumber")
-    }
-    else {
-        console.log("Not a techNumber")
-    }
-}
-isTechNum(2025)
+console.log(maximumAverageSubarrayI([1, 12, -5, -6, 50, 3], k = 4))
