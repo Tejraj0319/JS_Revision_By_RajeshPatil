@@ -46,3 +46,39 @@ const isAdam = (n) => {
     return squareOfOriginalNum === reverse(squareOfReverseNum) ? "Is ADAM" : "NOT ADAM";
 }
 console.log(isAdam(14));
+
+
+
+// Friendly Pair
+const sumOfProperDivisors = (num) => {
+    let sum = 0;
+    for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+            sum += i
+        }
+    }
+    return sum / num;
+}
+const friendlyPair = (num1, num2) => {
+    let a = sumOfProperDivisors(num1)
+    let b = sumOfProperDivisors(num2)
+    return a === b ? "Friendly Pair" : "Not Friendly Pair"
+}
+console.log(friendlyPair(30, 140))
+
+
+
+// Automorphic Number
+const automorphicNumber = (n) => {
+    let square = n * n;
+    let temp = n
+    while (temp > 0) {
+        if (temp % 10 !== square % 10) {
+            return "Not an Automorphic Number!"
+        }
+        temp = Math.floor(temp / 10)
+        square = (square / 10) | 0
+    }
+    return "Is an Automorphic Number"
+}
+console.log(automorphicNumber(25));
