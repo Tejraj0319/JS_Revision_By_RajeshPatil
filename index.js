@@ -844,17 +844,34 @@
 
 
 // LeetCode 643 – Maximum Average Subarray I
-const maximumAverageSubarrayI = (arr, k) => {
-    let windowSum = 0
-    for (let i = 0; i < k; i++) {
-        windowSum += arr[i]
+// const maximumAverageSubarrayI = (arr, k) => {
+//     let windowSum = 0
+//     for (let i = 0; i < k; i++) {
+//         windowSum += arr[i]
+//     }
+//     let maxSum = windowSum;
+//     for (let i = k; i < arr.length; i++) {
+//         windowSum += arr[i]
+//         windowSum -= arr[i - k]
+//         maxSum = Math.max(maxSum, windowSum)
+//     }
+//     return maxSum / k;
+// }
+// console.log(maximumAverageSubarrayI([1, 12, -5, -6, 50, 3], k = 4))
+
+
+
+// sort array elements
+const sortArray = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
     }
-    let maxSum = windowSum;
-    for (let i = k; i < arr.length; i++) {
-        windowSum += arr[i]
-        windowSum -= arr[i - k]
-        maxSum = Math.max(maxSum, windowSum)
-    }
-    return maxSum / k;
+    return arr;
 }
-console.log(maximumAverageSubarrayI([1, 12, -5, -6, 50, 3], k = 4))
+console.log(sortArray([5, 2, 8, 1, 4]));

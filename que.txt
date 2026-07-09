@@ -42,3 +42,4 @@ LeetCode 394 - Decode String (Medium)
 LeetCode 121 - Best Time to Buy and Sell Stock
 Tech Number
 LeetCode 643 – Maximum Average Subarray I
+sort array elements
