@@ -862,16 +862,29 @@
 
 
 // sort array elements
-const sortArray = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
-            }
-        }
+// const sortArray = (arr) => {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 let temp = arr[j]
+//                 arr[j] = arr[j + 1]
+//                 arr[j + 1] = temp
+//             }
+//         }
+//     }
+//     return arr;
+// }
+// console.log(sortArray([5, 2, 8, 1, 4]));
+
+
+
+// Count of Zeros and Ones in an Array
+const countZerosAndOnes = (arr)=>{
+    let ones = 0;
+    for(let i = 0; i < arr.length; i++){
+        ones += arr[i]
     }
-    return arr;
+    console.log("count of 1 is: ",ones)
+    console.log("Count of zeros is : ",arr.length - ones);
 }
-console.log(sortArray([5, 2, 8, 1, 4]));
+countZerosAndOnes([0,0,0,1,1,1,0,1,1,1,1,0,1,0,0]);
