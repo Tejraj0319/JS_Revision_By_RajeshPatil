@@ -879,12 +879,54 @@
 
 
 // Count of Zeros and Ones in an Array
-const countZerosAndOnes = (arr)=>{
-    let ones = 0;
-    for(let i = 0; i < arr.length; i++){
-        ones += arr[i]
+// const countZerosAndOnes = (arr)=>{
+//     let ones = 0;
+//     for(let i = 0; i < arr.length; i++){
+//         ones += arr[i]
+//     }
+//     console.log("count of 1 is: ",ones)
+//     console.log("Count of zeros is : ",arr.length - ones);
+// }
+// countZerosAndOnes([0,0,0,1,1,1,0,1,1,1,1,0,1,0,0]);
+
+
+
+// Maximum Sum of K Consecutive Elements
+// const maxSumSubarray = (arr, k) => {
+//     let windowSum = 0;
+//     for (let i = 0; i < k; i++) {
+//         windowSum += arr[i]
+//     }
+//     let maxSum = windowSum;
+//     for (let i = k; i < arr.length; i++) {
+//         windowSum = windowSum - arr[i - k] + arr[i]
+//         if (windowSum > maxSum) {
+//             maxSum = windowSum
+//         }
+//     }
+//     return maxSum;
+// };
+// console.log(maxSumSubarray([2, 1, 10, 1, 3, 2], 3));
+
+
+
+// LeetCode 209 - Minimum Size Subarray Sum
+const minSubArrayLen = (target, arr) => {
+    let sum = 0
+    let left = 0
+    let minLength = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        while (sum >= target) {
+            // minLength = Math.min(minLength, i - left + 1)
+            let currentLength = i - left + 1
+            if(minLength > currentLength){
+                minLength = currentLength
+            }
+            sum = sum - arr[left]
+            left++;
+        }
     }
-    console.log("count of 1 is: ",ones)
-    console.log("Count of zeros is : ",arr.length - ones);
+    return minLength === Infinity ? 0 : minLength;
 }
-countZerosAndOnes([0,0,0,1,1,1,0,1,1,1,1,0,1,0,0]);
+console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));

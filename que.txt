@@ -44,3 +44,5 @@ Tech Number
 LeetCode 643 – Maximum Average Subarray I
 sort array elements
 Count of Zeros and Ones in an Array
+Maximum Sum of K Consecutive Elements
+LeetCode 209 - Minimum Size Subarray Sum
