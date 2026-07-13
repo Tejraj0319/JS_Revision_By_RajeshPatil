@@ -179,6 +179,30 @@
 // }
 // console.log(reverseWords("hello world"))
 
+// without inbuilt methods
+
+// const reverseWords = (str) => {
+//     let word = ""
+//     let reverse = ""
+//     for (let i = 0; i <= str.length; i++) {
+//         if (str[i] !== " " && i !== str.length) {
+//             word += str[i]
+//         }
+//         else {
+//             for (let j = word.length - 1; j >= 0; j--) {
+//                 reverse += word[j]
+//             }
+//             if(i !== str.length){
+//                 reverse += " "
+//             }
+//             word = "";
+//         }
+//     }
+//     return reverse;
+// }
+// console.log(reverseWords("hello world"))
+
+
 
 
 // Move All Zeros to End
