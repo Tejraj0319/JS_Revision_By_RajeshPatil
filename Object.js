@@ -97,3 +97,6 @@ const source = {
 }
 // It assigns properties of target object to source object
 console.log(Object.assign(target,source))
+
+
+// IMP: while storing keys in object, it stores in given format only, but while returning, it returns in a sorted format ascending, always.
