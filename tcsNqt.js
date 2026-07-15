@@ -82,3 +82,58 @@ const automorphicNumber = (n) => {
     return "Is an Automorphic Number"
 }
 console.log(automorphicNumber(25));
+
+
+
+// Neon Number
+function isNeon(num) {
+    let square = num * num;
+    let sum = 0
+    while (square > 0) {
+        sum += square % 10;
+        // square = Math.floor(square / 10)
+        square = (square / 10) | 0;
+    }
+    return sum === num;
+}
+console.log(isNeon(9))
+
+
+
+// Spy Number
+function isSpy(num) {
+    let prod = 1
+    let sum = 0
+    while (num > 0) {
+        let digit = num % 10
+        prod *= digit
+        sum += digit
+        num = (num / 10) | 0
+    }
+    return prod === sum;
+}
+console.log(isSpy(1124));
+
+
+
+// Xylem and Phloem Number
+function checkXylemPhloem(num) {
+    let temp = num;
+    let lastDigit = temp % 10;
+    temp = (temp / 10) | 0;
+    let meanSum = 0
+    while (temp >= 10) {
+        meanSum += temp % 10
+        temp = (temp / 10) | 0;
+    }
+    let firstDigit = temp
+    let extremeSum = firstDigit + lastDigit
+    if (extremeSum === meanSum) {
+        console.log('Xylem Number')
+    }
+    else {
+        console.log('Phloem Number')
+    }
+}
+checkXylemPhloem(12345); 
+checkXylemPhloem(34326);
