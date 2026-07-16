@@ -935,22 +935,40 @@
 
 
 // LeetCode 209 - Minimum Size Subarray Sum
-const minSubArrayLen = (target, arr) => {
-    let sum = 0
-    let left = 0
-    let minLength = Infinity
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-        while (sum >= target) {
-            // minLength = Math.min(minLength, i - left + 1)
-            let currentLength = i - left + 1
-            if(minLength > currentLength){
-                minLength = currentLength
-            }
-            sum = sum - arr[left]
-            left++;
+// const minSubArrayLen = (target, arr) => {
+//     let sum = 0
+//     let left = 0
+//     let minLength = Infinity
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//         while (sum >= target) {
+//             // minLength = Math.min(minLength, i - left + 1)
+//             let currentLength = i - left + 1
+//             if(minLength > currentLength){
+//                 minLength = currentLength
+//             }
+//             sum = sum - arr[left]
+//             left++;
+//         }
+//     }
+//     return minLength === Infinity ? 0 : minLength;
+// }
+// console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
+
+
+
+// Find the Maximum Occurring Character in a String
+const maxOccurringChar = (str) => {
+    let map = {}
+    let maxCount = 0
+    let char = ""
+    for (let i = 0; i < str.length; i++) {
+        map[str[i]] = (map[str[i]] | 0) + 1
+        if (map[str[i]] > maxCount) {
+            maxCount = map[str[i]]
+            char = str[i]
         }
     }
-    return minLength === Infinity ? 0 : minLength;
+    return char;
 }
-console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]));
+console.log(maxOccurringChar("hello")); 
