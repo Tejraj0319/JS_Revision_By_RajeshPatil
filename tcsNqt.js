@@ -135,5 +135,26 @@ function checkXylemPhloem(num) {
         console.log('Phloem Number')
     }
 }
-checkXylemPhloem(12345); 
+checkXylemPhloem(12345);
 checkXylemPhloem(34326);
+
+
+
+// Leaders in an Array
+const leaders = (arr) => {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        let isLeader = true
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] > arr[i]) {
+                isLeader = false;
+                break;
+            }
+        }
+        if (isLeader) {
+            result[result.length] = arr[i]
+        }
+    }
+    return result;
+};
+console.log(leaders([16, 17, 4, 3, 5, 2]));
