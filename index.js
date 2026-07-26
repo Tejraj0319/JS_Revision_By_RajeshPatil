@@ -958,17 +958,45 @@
 
 
 // Find the Maximum Occurring Character in a String
-const maxOccurringChar = (str) => {
-    let map = {}
-    let maxCount = 0
-    let char = ""
-    for (let i = 0; i < str.length; i++) {
-        map[str[i]] = (map[str[i]] | 0) + 1
-        if (map[str[i]] > maxCount) {
-            maxCount = map[str[i]]
-            char = str[i]
+// const maxOccurringChar = (str) => {
+//     let map = {}
+//     let maxCount = 0
+//     let char = ""
+//     for (let i = 0; i < str.length; i++) {
+//         map[str[i]] = (map[str[i]] | 0) + 1
+//         if (map[str[i]] > maxCount) {
+//             maxCount = map[str[i]]
+//             char = str[i]
+//         }
+//     }
+//     return char;
+// }
+// console.log(maxOccurringChar("hello")); 
+
+
+
+// LeetCode 125 - Valid Palindrome
+function isPalindrome(s) {
+    let newStr = ""
+    for (let i = 0; i < s.length; i++) {
+        let ascii = s.charCodeAt(i)
+        if (ascii >= 65 && ascii <= 90) {
+            ascii = ascii + 32
+        }
+
+        if ((ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) {
+            newStr += String.fromCharCode(ascii)
         }
     }
-    return char;
+    let left = 0;
+    let right = newStr.length - 1
+    while (left < right) {
+        if (newStr[left] !== newStr[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
 }
-console.log(maxOccurringChar("hello")); 
+console.log(isPalindrome("A man, a plan, a canal: Panama"));

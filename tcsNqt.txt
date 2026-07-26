@@ -9,13 +9,6 @@ Xylem and Phloem Number
 Maximum Product Subarray
 Leaders in an Array
 Equilibrium Index
-Frequency of Characters
-Remove Duplicate Elements
-Reverse Words in a String
-Binary to Decimal
-Decimal to Binary (without built-in methods)
-Next Greater Element
-Merge Two Sorted Arrays
 Smallest Missing Positive Number
 Kadane's Algorithm
 Chocolate Distribution Problem
