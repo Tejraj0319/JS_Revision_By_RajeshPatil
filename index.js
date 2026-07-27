@@ -976,27 +976,44 @@
 
 
 // LeetCode 125 - Valid Palindrome
-function isPalindrome(s) {
-    let newStr = ""
-    for (let i = 0; i < s.length; i++) {
-        let ascii = s.charCodeAt(i)
-        if (ascii >= 65 && ascii <= 90) {
-            ascii = ascii + 32
-        }
+// function isPalindrome(s) {
+//     let newStr = ""
+//     for (let i = 0; i < s.length; i++) {
+//         let ascii = s.charCodeAt(i)
+//         if (ascii >= 65 && ascii <= 90) {
+//             ascii = ascii + 32
+//         }
+//         if ((ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) {
+//             newStr += String.fromCharCode(ascii)
+//         }
+//     }
+//     let left = 0;
+//     let right = newStr.length - 1
+//     while (left < right) {
+//         if (newStr[left] !== newStr[right]) {
+//             return false;
+//         }
+//         left++;
+//         right--;
+//     }
+//     return true;
+// }
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
 
-        if ((ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) {
-            newStr += String.fromCharCode(ascii)
+
+
+// Find Leaders in an Array
+function findLeaders(arr) {
+    const leaders = [];
+    let maxRight = arr[arr.length - 1];
+    leaders.push(maxRight)
+    for (let i = arr.length - 2; i >= 0; i--) {
+        if (arr[i] > maxRight) {
+            leaders.push(arr[i]);
+            maxRight = arr[i]
         }
     }
-    let left = 0;
-    let right = newStr.length - 1
-    while (left < right) {
-        if (newStr[left] !== newStr[right]) {
-            return false;
-        }
-        left++;
-        right--;
-    }
-    return true;
+    leaders.reverse();
+    return leaders;
 }
-console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(findLeaders([16, 17, 4, 3, 5, 2]));
