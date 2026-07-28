@@ -179,3 +179,28 @@ function equilibriumIndex(arr) {
     return -1;
 }
 console.log(equilibriumIndex([1, 7, 3, 6, 5, 6]));
+
+
+
+// Find smallest Missing Positive number in array
+const smallestMissingPositive = (arr) => {
+    let newArr = []
+    let idx = 0
+    for (let i of arr) {
+        if (i > 0) {
+            newArr[idx] = i
+            idx++;
+        }
+    }
+    newArr.sort((a, b) => a - b)
+    let smallest = 1;
+    for (let num of newArr) {
+        if (smallest === num) {
+            smallest++;
+        }
+        else {
+            return smallest;
+        }
+    }
+}
+console.log(smallestMissingPositive([3, 2, 5, -1, 1]));

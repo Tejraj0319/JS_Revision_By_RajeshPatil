@@ -1,14 +1,1 @@
-Armstrong Number
-ISBN Number Validation
-Adam Number
-Friendly Pair
-Automorphic Number
-Neon Number
-Spy Number
-Xylem and Phloem Number
-Maximum Product Subarray
-Leaders in an Array
-Equilibrium Index
-Smallest Missing Positive Number
-Kadane's Algorithm
 Chocolate Distribution Problem
