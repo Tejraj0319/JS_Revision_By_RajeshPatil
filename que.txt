@@ -49,3 +49,4 @@ LeetCode 209 - Minimum Size Subarray Sum
 Find the Maximum Occurring Character in a String.
 LeetCode 125 - Valid Palindrome
 Find Leaders in an Array
+Merge Overlapping Intervals (Medium)

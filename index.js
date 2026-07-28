@@ -1003,17 +1003,40 @@
 
 
 // Find Leaders in an Array
-function findLeaders(arr) {
-    const leaders = [];
-    let maxRight = arr[arr.length - 1];
-    leaders.push(maxRight)
-    for (let i = arr.length - 2; i >= 0; i--) {
-        if (arr[i] > maxRight) {
-            leaders.push(arr[i]);
-            maxRight = arr[i]
+// function findLeaders(arr) {
+//     const leaders = [];
+//     let maxRight = arr[arr.length - 1];
+//     leaders.push(maxRight)
+//     for (let i = arr.length - 2; i >= 0; i--) {
+//         if (arr[i] > maxRight) {
+//             leaders.push(arr[i]);
+//             maxRight = arr[i]
+//         }
+//     }
+//     leaders.reverse();
+//     return leaders;
+// }
+// console.log(findLeaders([16, 17, 4, 3, 5, 2]));
+
+
+// Merge Overlapping Intervals (Medium)
+function mergeIntervals(intervals) {
+    if (intervals.length <= 1) {
+        return intervals;
+    }
+    intervals.sort((a, b) => a[0] - b[0])
+    const result = []
+    result.push(intervals[0])
+    for(let i = 1; i < intervals.length; i++){
+        let lastInterval = result[result.length-1]
+        let currentInterval = intervals[i]
+        if(currentInterval[0] <= lastInterval[1]){
+            lastInterval[1] = Math.max(lastInterval[1], currentInterval[1]);
+        }
+        else{
+            result.push(currentInterval)
         }
     }
-    leaders.reverse();
-    return leaders;
+    return result;
 }
-console.log(findLeaders([16, 17, 4, 3, 5, 2]));
+console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
