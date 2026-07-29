@@ -1020,23 +1020,45 @@
 
 
 // Merge Overlapping Intervals (Medium)
-function mergeIntervals(intervals) {
-    if (intervals.length <= 1) {
-        return intervals;
-    }
-    intervals.sort((a, b) => a[0] - b[0])
-    const result = []
-    result.push(intervals[0])
-    for(let i = 1; i < intervals.length; i++){
-        let lastInterval = result[result.length-1]
-        let currentInterval = intervals[i]
-        if(currentInterval[0] <= lastInterval[1]){
-            lastInterval[1] = Math.max(lastInterval[1], currentInterval[1]);
+// function mergeIntervals(intervals) {
+//     if (intervals.length <= 1) {
+//         return intervals;
+//     }
+//     intervals.sort((a, b) => a[0] - b[0])
+//     const result = []
+//     result.push(intervals[0])
+//     for(let i = 1; i < intervals.length; i++){
+//         let lastInterval = result[result.length-1]
+//         let currentInterval = intervals[i]
+//         if(currentInterval[0] <= lastInterval[1]){
+//             lastInterval[1] = Math.max(lastInterval[1], currentInterval[1]);
+//         }
+//         else{
+//             result.push(currentInterval)
+//         }
+//     }
+//     return result;
+// }
+// console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
+
+
+
+// Longest Subarray with Sum ≤ K
+function longestSubarray(nums, k) {
+    let maxLength = 0;
+    let left = 0
+    let sum = 0
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i]
+        while (sum > k) {
+            sum -= nums[left]
+            left++;
         }
-        else{
-            result.push(currentInterval)
+        let length = i - left + 1
+        if (maxLength < length) {
+            maxLength = length
         }
     }
-    return result;
+    return maxLength
 }
-console.log(mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]));
+console.log(longestSubarray([2, 1, 5, 1, 3, 2], 7));
