@@ -1044,21 +1044,41 @@
 
 
 // Longest Subarray with Sum ≤ K
-function longestSubarray(nums, k) {
-    let maxLength = 0;
-    let left = 0
-    let sum = 0
-    for (let i = 0; i < nums.length; i++) {
-        sum += nums[i]
-        while (sum > k) {
-            sum -= nums[left]
-            left++;
-        }
-        let length = i - left + 1
-        if (maxLength < length) {
-            maxLength = length
-        }
+// function longestSubarray(nums, k) {
+//     let maxLength = 0;
+//     let left = 0
+//     let sum = 0
+//     for (let i = 0; i < nums.length; i++) {
+//         sum += nums[i]
+//         while (sum > k) {
+//             sum -= nums[left]
+//             left++;
+//         }
+//         let length = i - left + 1
+//         if (maxLength < length) {
+//             maxLength = length
+//         }
+//     }
+//     return maxLength
+// }
+// console.log(longestSubarray([2, 1, 5, 1, 3, 2], 7));
+
+
+
+// Find the Length of the Last Word
+const lengthOfLastWord = (str) => {
+    let count = ""
+    let i = str.length - 1
+    // Avoid trailing spaces 
+    while (i >= 0 && str[i] === " ") {
+        i--;
     }
-    return maxLength
+    // Count char of last word
+    while (i >= 0 && str[i] !== " ") {
+        i--;
+        count++;
+    }
+    return count;
+
 }
-console.log(longestSubarray([2, 1, 5, 1, 3, 2], 7));
+console.log(lengthOfLastWord("luffy is still joyboy ")); 
