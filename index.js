@@ -1066,19 +1066,63 @@
 
 
 // Find the Length of the Last Word
-const lengthOfLastWord = (str) => {
-    let count = ""
-    let i = str.length - 1
-    // Avoid trailing spaces 
-    while (i >= 0 && str[i] === " ") {
-        i--;
-    }
-    // Count char of last word
-    while (i >= 0 && str[i] !== " ") {
-        i--;
-        count++;
-    }
-    return count;
+// const lengthOfLastWord = (str) => {
+//     let count = ""
+//     let i = str.length - 1
+//     // Avoid trailing spaces 
+//     while (i >= 0 && str[i] === " ") {
+//         i--;
+//     }
+//     // Count char of last word
+//     while (i >= 0 && str[i] !== " ") {
+//         i--;
+//         count++;
+//     }
+//     return count;
+// }
+// console.log(lengthOfLastWord("luffy is still joyboy ")); 
 
+
+
+
+// LeetCode 42 - Trapping Rain Water(Hard)
+//                          █
+// █~~~~~~~~~~~~~~~~~~~~~~~~█
+// █~~~~~~~~~~~~~~█~~~~~~~~~█
+// █~~~~~█~~~~~~~~█~~~~█~~~~█
+// █~~~~~█~~~~~~~~█~~~~█~~~~█
+// ----------------------------
+// 4     2    0   3    2    5
+
+// █ = Wall, ~ = Water
+// 0, 4 - 2 = 2, 4 - 0 = 4, 4 - 3 = 1, 4 - 2 = 2, 0
+// 0 + 2 + 4 + 1 + 2 + 0 = 9
+const trap = (arr) => {
+    let left = 0;
+    let right = arr.length - 1
+    let water = 0
+    let leftMax = 0
+    let rightMax = 0
+    while (left < right) {
+        if (arr[left] < arr[right]) {
+            if (arr[left] >= leftMax) {
+                leftMax = arr[left]
+            }
+            else {
+                water += leftMax - arr[left]
+            }
+            left++;
+        }
+        else {
+            if (arr[right] >= rightMax) {
+                rightMax = arr[right]
+            }
+            else {
+                water += rightMax - arr[right]
+            }
+            right--;
+        }
+    }
+    return water;
 }
-console.log(lengthOfLastWord("luffy is still joyboy ")); 
+console.log(trap([4, 2, 0, 3, 2, 5]));
