@@ -1097,32 +1097,54 @@
 // █ = Wall, ~ = Water
 // 0, 4 - 2 = 2, 4 - 0 = 4, 4 - 3 = 1, 4 - 2 = 2, 0
 // 0 + 2 + 4 + 1 + 2 + 0 = 9
-const trap = (arr) => {
+// const trap = (arr) => {
+//     let left = 0;
+//     let right = arr.length - 1
+//     let water = 0
+//     let leftMax = 0
+//     let rightMax = 0
+//     while (left < right) {
+//         if (arr[left] < arr[right]) {
+//             if (arr[left] >= leftMax) {
+//                 leftMax = arr[left]
+//             }
+//             else {
+//                 water += leftMax - arr[left]
+//             }
+//             left++;
+//         }
+//         else {
+//             if (arr[right] >= rightMax) {
+//                 rightMax = arr[right]
+//             }
+//             else {
+//                 water += rightMax - arr[right]
+//             }
+//             right--;
+//         }
+//     }
+//     return water;
+// }
+// console.log(trap([4, 2, 0, 3, 2, 5]));
+
+
+
+// LeetCode 11 - Container With Most Water(Medium)
+const maxArea = (arr) => {
     let left = 0;
-    let right = arr.length - 1
-    let water = 0
-    let leftMax = 0
-    let rightMax = 0
+    let right = arr.length - 1;
+    let water = 0;
     while (left < right) {
-        if (arr[left] < arr[right]) {
-            if (arr[left] >= leftMax) {
-                leftMax = arr[left]
-            }
-            else {
-                water += leftMax - arr[left]
-            }
-            left++;
+        let width = right - left
+        let currentArea = Math.min(arr[left], arr[right]) * width
+        water = Math.max(water, currentArea)
+        if (arr[left] > arr[right]) {
+            right--;
         }
         else {
-            if (arr[right] >= rightMax) {
-                rightMax = arr[right]
-            }
-            else {
-                water += rightMax - arr[right]
-            }
-            right--;
+            left++;
         }
     }
     return water;
 }
-console.log(trap([4, 2, 0, 3, 2, 5]));
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
