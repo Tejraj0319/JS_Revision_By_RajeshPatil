@@ -1130,21 +1130,53 @@
 
 
 // LeetCode 11 - Container With Most Water(Medium)
-const maxArea = (arr) => {
-    let left = 0;
-    let right = arr.length - 1;
-    let water = 0;
-    while (left < right) {
-        let width = right - left
-        let currentArea = Math.min(arr[left], arr[right]) * width
-        water = Math.max(water, currentArea)
-        if (arr[left] > arr[right]) {
-            right--;
-        }
-        else {
-            left++;
+// const maxArea = (arr) => {
+//     let left = 0;
+//     let right = arr.length - 1;
+//     let water = 0;
+//     while (left < right) {
+//         let width = right - left
+//         let currentArea = Math.min(arr[left], arr[right]) * width
+//         water = Math.max(water, currentArea)
+//         if (arr[left] > arr[right]) {
+//             right--;
+//         }
+//         else {
+//             left++;
+//         }
+//     }
+//     return water;
+// }
+// console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+
+
+// LeetCode 5 - Longest Palindromic Substring(Medium)
+function longestPalindrome(str) {
+    let longest = "";
+    for (let i = 0; i < str.length; i++) {
+        for (let j = i; j < str.length; j++) {
+            let left = i;
+            let right = j;
+            let isPalindrome = true;
+            while (left < right) {
+                if (str[left] !== str[right]) {
+                    isPalindrome = false;
+                    break;
+                }
+                left++;
+                right--;
+            }
+            if (isPalindrome) {
+                if ((j - i + 1) > longest.length) {
+
+                    longest = "";
+                    for (let k = i; k <= j; k++) {
+                        longest += str[k];
+                    }
+                }
+            }
         }
     }
-    return water;
+    return longest;
 }
-console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
