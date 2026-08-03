@@ -1152,31 +1152,46 @@
 
 
 // LeetCode 5 - Longest Palindromic Substring(Medium)
-function longestPalindrome(str) {
-    let longest = "";
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i; j < str.length; j++) {
-            let left = i;
-            let right = j;
-            let isPalindrome = true;
-            while (left < right) {
-                if (str[left] !== str[right]) {
-                    isPalindrome = false;
-                    break;
-                }
-                left++;
-                right--;
-            }
-            if (isPalindrome) {
-                if ((j - i + 1) > longest.length) {
+// function longestPalindrome(str) {
+//     let longest = "";
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = i; j < str.length; j++) {
+//             let left = i;
+//             let right = j;
+//             let isPalindrome = true;
+//             while (left < right) {
+//                 if (str[left] !== str[right]) {
+//                     isPalindrome = false;
+//                     break;
+//                 }
+//                 left++;
+//                 right--;
+//             }
+//             if (isPalindrome) {
+//                 if ((j - i + 1) > longest.length) {
+//                     longest = "";
+//                     for (let k = i; k <= j; k++) {
+//                         longest += str[k];
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return longest;
+// }
 
-                    longest = "";
-                    for (let k = i; k <= j; k++) {
-                        longest += str[k];
-                    }
-                }
+
+
+// LeetCode 300 - Longest Increasing Subsequence(Medium)
+function lengthOfLIS(nums) {
+    const dp = new Array(nums.length).fill(1);
+    for (let i = 1; i < nums.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (nums[j] < nums[i]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
             }
         }
     }
-    return longest;
+    return Math.max(...dp);
 }
+console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));

@@ -55,3 +55,4 @@ Find the Length of the Last Word
 LeetCode 42 - Trapping Rain Water(Hard)
 LeetCode 11 - Container With Most Water(Medium)
 LeetCode 5 - Longest Palindromic Substring(Medium)
+LeetCode 300 - Longest Increasing Subsequence(Medium)
