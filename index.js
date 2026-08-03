@@ -1184,14 +1184,22 @@
 
 // LeetCode 300 - Longest Increasing Subsequence(Medium)
 function lengthOfLIS(nums) {
-    const dp = new Array(nums.length).fill(1);
-    for (let i = 1; i < nums.length; i++) {
-        for (let j = 0; j < i; j++) {
-            if (nums[j] < nums[i]) {
-                dp[i] = Math.max(dp[i], dp[j] + 1);
+    const tails = [];
+    for (let num of nums) {
+        if (tails.length === 0) {
+            tails.push(num)
+        }
+        else if (tails[tails.length - 1] < num) {
+            tails.push(num)
+        }
+        else {
+            for (let i = 0; i < tails.length; i++) {
+                if (tails[i] > num) {
+                    tails[i] = num
+                }
             }
         }
     }
-    return Math.max(...dp);
+    return tails.length;
 }
 console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
