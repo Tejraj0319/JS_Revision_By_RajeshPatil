@@ -31,7 +31,7 @@ maximum product of any continuous subarray
 Group Anagrams
 Find the Majority Element(element that appears more than n/2 times.)
 Find the Maximum Consecutive 1's in an Array
-Two sum
+LeetCode 1 -Two sum(Easy)
 Find the First Recurring Character
 Merge Two Sorted Arrays
 Separate Numbers and Strings in an Array
@@ -56,3 +56,5 @@ LeetCode 42 - Trapping Rain Water(Hard)
 LeetCode 11 - Container With Most Water(Medium)
 LeetCode 5 - Longest Palindromic Substring(Medium)
 LeetCode 300 - Longest Increasing Subsequence(Medium)
+LeetCode 560 - Subarray Sum Equals K (Medium)
+Maximum Difference Between Two Elements

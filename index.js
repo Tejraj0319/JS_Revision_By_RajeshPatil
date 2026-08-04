@@ -1183,23 +1183,66 @@
 
 
 // LeetCode 300 - Longest Increasing Subsequence(Medium)
-function lengthOfLIS(nums) {
-    const tails = [];
-    for (let num of nums) {
-        if (tails.length === 0) {
-            tails.push(num)
-        }
-        else if (tails[tails.length - 1] < num) {
-            tails.push(num)
-        }
-        else {
-            for (let i = 0; i < tails.length; i++) {
-                if (tails[i] > num) {
-                    tails[i] = num
+// function lengthOfLIS(nums) {
+//     const tails = [];
+//     for (let num of nums) {
+//         if (tails.length === 0) {
+//             tails.push(num)
+//         }
+//         else if (tails[tails.length - 1] < num) {
+//             tails.push(num)
+//         }
+//         else {
+//             for (let i = 0; i < tails.length; i++) {
+//                 if (tails[i] > num) {
+//                     tails[i] = num
+//                 }
+//             }
+//         }
+//     }
+//     return tails.length;
+// }
+// console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
+
+
+
+// LeetCode 560 - Subarray Sum Equals K (Medium)
+// const subarraySum = (arr, k) => {
+//     let count = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         let sum = 0
+//         for (let j = i; j < arr.length; j++) {
+//             sum += arr[j]
+//             if(sum === k){
+//                 count++;
+//             }
+//         }
+//     }
+//     return count;
+// }
+// console.log(subarraySum([3, 4, 7, 2, -3, 1, 4, 2], 7));
+
+
+
+
+// Maximum Difference Between Two Elements
+function maxDifference(arr) {
+    let diff = 0;
+    let grt = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > grt) {
+            grt = arr[i]
+            for (let j = 0; j < i; j++) {
+                let currentDiff = grt - arr[j]
+                if (currentDiff > diff) {
+                    diff = currentDiff
                 }
             }
         }
+        else {
+            grt = arr[i]
+        }
     }
-    return tails.length;
+    return diff > 0 ? diff : -1;
 }
-console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
+console.log(maxDifference([7, 9, 5, 6, 3, 2]));
