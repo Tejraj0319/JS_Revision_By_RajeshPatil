@@ -58,3 +58,4 @@ LeetCode 5 - Longest Palindromic Substring(Medium)
 LeetCode 300 - Longest Increasing Subsequence(Medium)
 LeetCode 560 - Subarray Sum Equals K (Medium)
 Maximum Difference Between Two Elements
+Find the Longest Consecutive Sequence

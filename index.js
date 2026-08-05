@@ -1224,25 +1224,57 @@
 
 
 
-
 // Maximum Difference Between Two Elements
-function maxDifference(arr) {
-    let diff = 0;
-    let grt = arr[0];
+// function maxDifference(arr) {
+//     let diff = 0;
+//     let grt = arr[0];
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > grt) {
+//             grt = arr[i]
+//             for (let j = 0; j < i; j++) {
+//                 let currentDiff = grt - arr[j]
+//                 if (currentDiff > diff) {
+//                     diff = currentDiff
+//                 }
+//             }
+//         }
+//         else {
+//             grt = arr[i]
+//         }
+//     }
+//     return diff > 0 ? diff : -1;
+// }
+// console.log(maxDifference([7, 9, 5, 6, 3, 2]));
+
+
+
+// Find the Longest Consecutive Sequence
+const longestConsecutive = (arr) => {
+    if (arr.length === 0) {
+        return 0;
+    }
+    arr.sort((a, b) => a - b)
+    let prev = arr[0];
+    let count = 1;
+    let maxCount = 1;
     for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > grt) {
-            grt = arr[i]
-            for (let j = 0; j < i; j++) {
-                let currentDiff = grt - arr[j]
-                if (currentDiff > diff) {
-                    diff = currentDiff
-                }
-            }
+        if (arr[i] === prev) {
+            continue
+        }
+        if (arr[i] === prev + 1) {
+            count++;
         }
         else {
-            grt = arr[i]
+            if (count > maxCount) {
+                maxCount = count
+            }
+            count = 1;
         }
+        prev = arr[i]
     }
-    return diff > 0 ? diff : -1;
+    if (count > maxCount) {
+        maxCount = count;
+    }
+    return maxCount;
 }
-console.log(maxDifference([7, 9, 5, 6, 3, 2]));
+console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
