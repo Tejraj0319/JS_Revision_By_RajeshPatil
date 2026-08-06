@@ -59,3 +59,4 @@ LeetCode 300 - Longest Increasing Subsequence(Medium)
 LeetCode 560 - Subarray Sum Equals K (Medium)
 Maximum Difference Between Two Elements
 Find the Longest Consecutive Sequence
+Maximum Product of Two Elements in an Array

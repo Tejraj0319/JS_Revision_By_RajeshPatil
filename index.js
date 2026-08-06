@@ -1249,32 +1249,61 @@
 
 
 // Find the Longest Consecutive Sequence
-const longestConsecutive = (arr) => {
-    if (arr.length === 0) {
-        return 0;
-    }
-    arr.sort((a, b) => a - b)
-    let prev = arr[0];
-    let count = 1;
-    let maxCount = 1;
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] === prev) {
-            continue
+// const longestConsecutive = (arr) => {
+//     if (arr.length === 0) {
+//         return 0;
+//     }
+//     arr.sort((a, b) => a - b)
+//     let prev = arr[0];
+//     let count = 1;
+//     let maxCount = 1;
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] === prev) {
+//             continue
+//         }
+//         if (arr[i] === prev + 1) {
+//             count++;
+//         }
+//         else {
+//             if (count > maxCount) {
+//                 maxCount = count
+//             }
+//             count = 1;
+//         }
+//         prev = arr[i]
+//     }
+//     if (count > maxCount) {
+//         maxCount = count;
+//     }
+//     return maxCount;
+// }
+// console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
+
+
+
+// Maximum Product of Two Elements in an Array
+const maxProduct = (arr) => {
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+    let smallest = Infinity;
+    let secondSmallest = Infinity;
+    for (let num of arr) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest) {
+            secondLargest = num;
         }
-        if (arr[i] === prev + 1) {
-            count++;
+        if (num < smallest) {
+            secondSmallest = smallest;
+            smallest = num;
+        } else if (num < secondSmallest) {
+            secondSmallest = num;
         }
-        else {
-            if (count > maxCount) {
-                maxCount = count
-            }
-            count = 1;
-        }
-        prev = arr[i]
     }
-    if (count > maxCount) {
-        maxCount = count;
-    }
-    return maxCount;
+    return Math.max(
+        largest * secondLargest,
+        smallest * secondSmallest
+    );
 }
-console.log(longestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
+console.log(maxProduct([-100, 2, 3]));
