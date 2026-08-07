@@ -60,3 +60,4 @@ LeetCode 560 - Subarray Sum Equals K (Medium)
 Maximum Difference Between Two Elements
 Find the Longest Consecutive Sequence
 Maximum Product of Two Elements in an Array
+LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)

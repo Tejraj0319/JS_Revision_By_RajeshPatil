@@ -1282,28 +1282,54 @@
 
 
 // Maximum Product of Two Elements in an Array
-const maxProduct = (arr) => {
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
-    let smallest = Infinity;
-    let secondSmallest = Infinity;
-    for (let num of arr) {
-        if (num > largest) {
-            secondLargest = largest;
-            largest = num;
-        } else if (num > secondLargest) {
-            secondLargest = num;
-        }
-        if (num < smallest) {
-            secondSmallest = smallest;
-            smallest = num;
-        } else if (num < secondSmallest) {
-            secondSmallest = num;
+// const maxProduct = (arr) => {
+//     let largest = -Infinity;
+//     let secondLargest = -Infinity;
+//     let smallest = Infinity;
+//     let secondSmallest = Infinity;
+//     for (let num of arr) {
+//         if (num > largest) {
+//             secondLargest = largest;
+//             largest = num;
+//         } else if (num > secondLargest) {
+//             secondLargest = num;
+//         }
+//         if (num < smallest) {
+//             secondSmallest = smallest;
+//             smallest = num;
+//         } else if (num < secondSmallest) {
+//             secondSmallest = num;
+//         }
+//     }
+//     return Math.max(
+//         largest * secondLargest,
+//         smallest * secondSmallest
+//     );
+// }
+// console.log(maxProduct([-100, 2, 3]));
+
+
+
+//  LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
+const findMaxLength = (arr) => {
+    let maxLength = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let zeros = 0;
+        let ones = 0;
+        for (let j = i; j < arr.length; j++) {
+            if (arr[j] === 0) {
+                zeros++;
+            } else {
+                ones++;
+            }
+            if (zeros === ones) {
+                let currentLength = j - i + 1
+                if(maxLength < currentLength){
+                  maxLength = currentLength
+                }
+            }
         }
     }
-    return Math.max(
-        largest * secondLargest,
-        smallest * secondSmallest
-    );
-}
-console.log(maxProduct([-100, 2, 3]));
+    return maxLength;
+};
+console.log(findMaxLength([0, 0, 0, 1, 1, 1]));
