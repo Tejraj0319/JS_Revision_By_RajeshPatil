@@ -1311,25 +1311,57 @@
 
 
 //  LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
-const findMaxLength = (arr) => {
+// const findMaxLength = (arr) => {
+//     let maxLength = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         let zeros = 0;
+//         let ones = 0;
+//         for (let j = i; j < arr.length; j++) {
+//             if (arr[j] === 0) {
+//                 zeros++;
+//             } else {
+//                 ones++;
+//             }
+//             if (zeros === ones) {
+//                 let currentLength = j - i + 1
+//                 if(maxLength < currentLength){
+//                   maxLength = currentLength
+//                 }
+//             }
+//         }
+//     }
+//     return maxLength;
+// };
+// console.log(findMaxLength([0, 0, 0, 1, 1, 1]));
+
+
+
+// Longest Subarray with Equal Sum of Two Halves
+function longestEqualHalfSum(arr) {
     let maxLength = 0;
     for (let i = 0; i < arr.length; i++) {
-        let zeros = 0;
-        let ones = 0;
-        for (let j = i; j < arr.length; j++) {
-            if (arr[j] === 0) {
-                zeros++;
-            } else {
-                ones++;
+        for (let j = i + 1; j < arr.length; j++) {
+            let currentLength = j - i + 1;
+            if (currentLength % 2 !== 0) {
+                continue;
             }
-            if (zeros === ones) {
-                let currentLength = j - i + 1
-                if(maxLength < currentLength){
-                  maxLength = currentLength
+            let mid = i + currentLength / 2;
+
+            let firstSum = 0;
+            let secondSum = 0;
+            for (let k = i; k < mid; k++) {
+                firstSum = firstSum + arr[k];
+            }
+            for (let k = mid; k <= j; k++) {
+                secondSum = secondSum + arr[k];
+            }
+            if (firstSum === secondSum) {
+                if (currentLength > maxLength) {
+                    maxLength = currentLength;
                 }
             }
         }
     }
     return maxLength;
-};
-console.log(findMaxLength([0, 0, 0, 1, 1, 1]));
+}
+console.log(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]));
