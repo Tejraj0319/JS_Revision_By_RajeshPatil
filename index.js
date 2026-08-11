@@ -1337,31 +1337,34 @@
 
 
 // Longest Subarray with Equal Sum of Two Halves
-function longestEqualHalfSum(arr) {
-    let maxLength = 0;
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            let currentLength = j - i + 1;
-            if (currentLength % 2 !== 0) {
-                continue;
-            }
-            let mid = i + currentLength / 2;
+// function longestEqualHalfSum(arr) {
+//     let maxLength = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             let currentLength = j - i + 1;
+//             if (currentLength % 2 !== 0) {
+//                 continue;
+//             }
+//             let mid = i + currentLength / 2;
+//             let firstSum = 0;
+//             let secondSum = 0;
+//             for (let k = i; k < mid; k++) {
+//                 firstSum = firstSum + arr[k];
+//             }
+//             for (let k = mid; k <= j; k++) {
+//                 secondSum = secondSum + arr[k];
+//             }
+//             if (firstSum === secondSum) {
+//                 if (currentLength > maxLength) {
+//                     maxLength = currentLength;
+//                 }
+//             }
+//         }
+//     }
+//     return maxLength;
+// }
+// console.log(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]));
 
-            let firstSum = 0;
-            let secondSum = 0;
-            for (let k = i; k < mid; k++) {
-                firstSum = firstSum + arr[k];
-            }
-            for (let k = mid; k <= j; k++) {
-                secondSum = secondSum + arr[k];
-            }
-            if (firstSum === secondSum) {
-                if (currentLength > maxLength) {
-                    maxLength = currentLength;
-                }
-            }
-        }
-    }
-    return maxLength;
-}
-console.log(longestEqualHalfSum([1, 5, 2, 8, 3, 7, 4]));
+
+
+// 
