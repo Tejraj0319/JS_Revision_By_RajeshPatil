@@ -204,3 +204,26 @@ const smallestMissingPositive = (arr) => {
     }
 }
 console.log(smallestMissingPositive([3, 2, 5, -1, 1]));
+
+
+// Chocolate Distribution Problem
+function chocolateDistribution(arr, m) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    let minDiff = Infinity;
+    for (let i = 0; i <= arr.length - m; i++) {
+        let difference = arr[i + m - 1] - arr[i];
+        if (difference < minDiff) {
+            minDiff = difference;
+        }
+    }
+    return minDiff;
+}
+console.log(chocolateDistribution([7, 3, 2, 4, 9, 12, 56], 3));
