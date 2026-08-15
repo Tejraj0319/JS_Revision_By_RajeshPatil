@@ -63,3 +63,4 @@ Maximum Product of Two Elements in an Array
 LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
 Longest Subarray with Equal Sum of Two Halves
 Longest Substring with Exactly K Unique Characters
+Maximum Product of Three Elements

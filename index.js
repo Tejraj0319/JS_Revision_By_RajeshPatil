@@ -1368,39 +1368,80 @@
 
 
 // Longest Substring with Exactly K Unique Characters
-const longest_substring = (str, k) => {
-    let max_length = 0
-    for (let i = 0; i < str.length; i++) {
-        let unique_count = 0;
-        let current_String = ""
-        for (let j = i; j < str.length; j++) {
-            let char = str[j];
-            let already_exists = false;
-            for (let x = 0; x < current_String.length; x++) {
-                if (current_String[x] === char) {
-                    already_exists = true;
-                    break;
-                }
-            }
-            if (already_exists === true) {
-                current_String += char
-            }
-            else {
-                if (unique_count < k) {
-                    unique_count++;
-                    current_String += char;
-                }
-                else {
-                    break;
-                }
+// const longest_substring = (str, k) => {
+//     let max_length = 0
+//     for (let i = 0; i < str.length; i++) {
+//         let unique_count = 0;
+//         let current_String = ""
+//         for (let j = i; j < str.length; j++) {
+//             let char = str[j];
+//             let already_exists = false;
+//             for (let x = 0; x < current_String.length; x++) {
+//                 if (current_String[x] === char) {
+//                     already_exists = true;
+//                     break;
+//                 }
+//             }
+//             if (already_exists === true) {
+//                 current_String += char
+//             }
+//             else {
+//                 if (unique_count < k) {
+//                     unique_count++;
+//                     current_String += char;
+//                 }
+//                 else {
+//                     break;
+//                 }
+//             }
+//         }
+//         if (unique_count === k) {
+//             if (max_length < current_String.length) {
+//                 max_length = current_String.length
+//             }
+//         }
+//     }
+//     return max_length;
+// }
+// console.log(longest_substring("aabacbebebe", 3))
+
+
+
+// Maximum Product of Three Elements
+const maxProductOfThree = (arr) => {
+    let max1 = - Infinity
+    let max2 = - Infinity
+    let max3 = - Infinity
+    let min1 = Infinity
+    let min2 = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        let n = arr[i]
+        if (n > max1) {
+            max3 = max2;
+            max2 = max1
+            max1 = n
+        }
+        else if (n > max2) {
+            max3 = max2;
+            max2 = n
+        }
+        else {
+            if (n > max3) {
+                max3 = n
             }
         }
-        if (unique_count === k) {
-            if (max_length < current_String.length) {
-                max_length = current_String.length
+        if (n < min1) {
+            min2 = min1;
+            min1 = n
+        }
+        else {
+            if (n < min2) {
+                min2 = n
             }
         }
     }
-    return max_length;
+    let product1 = max1 * max2 * max3;
+    let product2 = min1 * min2 * max1;
+    return product1 > product2 ? product1 : product2
 }
-console.log(longest_substring("aabacbebebe", 3))
+console.log(maxProductOfThree([-5, -2, -1, 4, 3]));
