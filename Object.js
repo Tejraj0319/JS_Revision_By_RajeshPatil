@@ -53,7 +53,6 @@ console.log(obj6);
 
 
 
-
 let changedName = (person.name = "Om")
 let name = person.name
 let age = person["age"]
@@ -95,8 +94,8 @@ const source = {
     name: "abc",
     email: "abc@gmail.com"
 }
-// It assigns properties of target object to source object
+// It assigns properties of source object to target object
 console.log(Object.assign(target,source))
 
 
-// IMP: while storing keys in object, it stores in given format only, but while returning, it returns in a sorted format ascending, always.
+// IMP: if you are storing keys in object in number datatype, while returning, it returns in a sorted format ascending, always.

@@ -1,0 +1,10 @@
+| Technique              | 5 LeetCode Problems    |
+| ---------------------- | ---------------------- |
+| **Frequency Counting** | 242, 383, 387, 451, 49 |
+| **Two Pointers**       | 125, 344, 345, 680, 11 |
+| **Sliding Window**     | 3, 1456, 567, 438, 76  |
+| **HashSet / HashMap**  | 1, 217, 219, 205, 290  |
+| **String Traversal**   | 709, 771, 520, 657, 8  |
+| **Sorting**            | 242, 49, 451, 791, 179 |
+| **Stack**              | 20, 1047, 1544, 71, 32 |
+| **Prefix / Pattern**   | 14, 28, 459, 796, 686  |

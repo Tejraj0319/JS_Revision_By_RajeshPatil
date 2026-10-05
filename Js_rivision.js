@@ -57,7 +57,7 @@
 
 
 
-// call, apply, bind is used to set value of this keyword
+// call, apply, bind is used to set value of "this" keyword
 // call:  "IMMEDIATELY INVOKES"  the function by taking arguments one-by-one
 // apply:  "IMMEDIATELY INVOKES"  the function by taking array of arguments
 // bind:  "DOES NOT IMMEDIATELY INVOKES"  the function instead returns the new function

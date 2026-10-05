@@ -232,6 +232,38 @@
 //     return s1 === s2
 // }
 // console.log(isAnagram("listen", "silent"));
+// or
+// const isAnagram = (str1, str2) => {
+//     if (str1.length !== str2.length) return false;
+//     const map = {}
+//     for (let i = 0; i < str1.length; i++) {
+//         let ch = str1[i]
+//         if (ch >= 'A' && ch <= 'Z') {
+//             ch = String.fromCharCode(ch.charCodeAt(0) + 32)
+//         }
+//         if (map[ch] === undefined) {
+//             map[ch] = 1
+//         }
+//         else {
+//             map[ch]++
+//         }
+//     }
+//     for (let i = 0; i < str1.length; i++) {
+//         let ch = str1[i]
+//         if (ch >= 'A' && ch <= 'Z') {
+//             ch = String.fromCharCode(ch.charCodeAt(0) + 32)
+//         }
+//         if (map[ch] === undefined) {
+//             return false;
+//         }
+//         map[ch]--;
+//         if (map[ch] < 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(isAnagram("listen", "silent"));
 
 
 
