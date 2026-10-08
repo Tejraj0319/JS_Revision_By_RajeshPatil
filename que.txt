@@ -64,3 +64,9 @@ LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
 Longest Subarray with Equal Sum of Two Halves
 Longest Substring with Exactly K Unique Characters
 Maximum Product of Three Elements.
+
+------------------------------------------------- String ------------------------------------------
+LeetCode 242 - Valid Anagram(Easy)
+LeetCode 383 - Ransom Note(Easy)
+LeetCode 387 - First Unique Character in a String(Easy)
+LeetCode 49 - Group Anagrams(Medium)

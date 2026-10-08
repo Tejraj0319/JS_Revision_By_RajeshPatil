@@ -1440,40 +1440,114 @@
 
 
 // Maximum Product of Three Elements
-const maxProductOfThree = (arr) => {
-    let max1 = - Infinity
-    let max2 = - Infinity
-    let max3 = - Infinity
-    let min1 = Infinity
-    let min2 = Infinity
-    for (let i = 0; i < arr.length; i++) {
-        let n = arr[i]
-        if (n > max1) {
-            max3 = max2;
-            max2 = max1
-            max1 = n
+// const maxProductOfThree = (arr) => {
+//     let max1 = - Infinity
+//     let max2 = - Infinity
+//     let max3 = - Infinity
+//     let min1 = Infinity
+//     let min2 = Infinity
+//     for (let i = 0; i < arr.length; i++) {
+//         let n = arr[i]
+//         if (n > max1) {
+//             max3 = max2;
+//             max2 = max1
+//             max1 = n
+//         }
+//         else if (n > max2) {
+//             max3 = max2;
+//             max2 = n
+//         }
+//         else {
+//             if (n > max3) {
+//                 max3 = n
+//             }
+//         }
+//         if (n < min1) {
+//             min2 = min1;
+//             min1 = n
+//         }
+//         else {
+//             if (n < min2) {
+//                 min2 = n
+//             }
+//         }
+//     }
+//     let product1 = max1 * max2 * max3;
+//     let product2 = min1 * min2 * max1;
+//     return product1 > product2 ? product1 : product2
+// }
+// console.log(maxProductOfThree([-5, -2, -1, 4, 3]));
+
+
+// LeetCode 242 - Valid Anagram(Easy)
+// const isAnagram = function (s, t) {
+//     if (s.length !== t.length) return false;
+//     let obj = {}
+//     for (let i = 0; i < s.length; i++) {
+//         obj[s[i]] = (obj[s[i]] || 0) + 1;
+//     }
+//     for (let j = 0; j < t.length; j++) {
+//         if (obj[t[j]] === undefined) {
+//             return false
+//         }
+//         obj[t[j]]--;
+//     }
+//     for (let key in obj) {
+//         if (obj[key] !== 0) {
+//             return false
+//         }
+//     }
+//     return true;
+// }
+// console.log(isAnagram("anagram", "nagaram"));
+
+
+// LeetCode 383 - Ransom Note(Easy)
+// var canConstruct = function (ransomNote, magazine) {
+//     if (ransomNote.length > magazine.length) return false
+//     let obj = {}
+//     for (let i of ransomNote) {
+//         obj[i] = (obj[i] || 0) + 1
+//     }
+//     for (let i of magazine) {
+//         if (obj[i]) {
+//             obj[i]--;
+//         }
+//     }
+//     for (let key in obj) {
+//         if (obj[key] !== 0) {
+//             return false
+//         }
+//     }
+//     return true
+// };
+// console.log(canConstruct("aabbcc", "aabbc"))
+
+
+// LeetCode 387 - First Unique Character in a String
+// var firstUniqChar = function (s) {
+//     let data = {}
+//     for (let i of s) {
+//         data[i] = (data[i] || 0) + 1
+//     }
+//     for (let i = 0; i < s.length; i++) {
+//         if (data[s[i]] === 1) {
+//             return i
+//         }
+//     }
+//     return -1
+// };
+
+
+// LeetCode 49 - Group Anagrams(Medium)
+var groupAnagrams = function (strs) {
+    let obj = {};
+    for (let str of strs) {
+        let key = str.split('').sort().join('');
+        if (!obj[key]) {
+            obj[key] = [];
         }
-        else if (n > max2) {
-            max3 = max2;
-            max2 = n
-        }
-        else {
-            if (n > max3) {
-                max3 = n
-            }
-        }
-        if (n < min1) {
-            min2 = min1;
-            min1 = n
-        }
-        else {
-            if (n < min2) {
-                min2 = n
-            }
-        }
+        obj[key].push(str);
     }
-    let product1 = max1 * max2 * max3;
-    let product2 = min1 * min2 * max1;
-    return product1 > product2 ? product1 : product2
-}
-console.log(maxProductOfThree([-5, -2, -1, 4, 3]));
+    return Object.values(obj);
+};
