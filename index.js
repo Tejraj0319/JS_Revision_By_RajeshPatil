@@ -1413,179 +1413,40 @@
 
 
 // Maximum Product of Three Elements
-// const maxProductOfThree = (arr) => {
-//     let max1 = - Infinity
-//     let max2 = - Infinity
-//     let max3 = - Infinity
-//     let min1 = Infinity
-//     let min2 = Infinity
-//     for (let i = 0; i < arr.length; i++) {
-//         let n = arr[i]
-//         if (n > max1) {
-//             max3 = max2;
-//             max2 = max1
-//             max1 = n
-//         }
-//         else if (n > max2) {
-//             max3 = max2;
-//             max2 = n
-//         }
-//         else {
-//             if (n > max3) {
-//                 max3 = n
-//             }
-//         }
-//         if (n < min1) {
-//             min2 = min1;
-//             min1 = n
-//         }
-//         else {
-//             if (n < min2) {
-//                 min2 = n
-//             }
-//         }
-//     }
-//     let product1 = max1 * max2 * max3;
-//     let product2 = min1 * min2 * max1;
-//     return product1 > product2 ? product1 : product2
-// }
-// console.log(maxProductOfThree([-5, -2, -1, 4, 3]));
-
-
-// LeetCode 242 - Valid Anagram(Easy)
-// const isAnagram = function (s, t) {
-//     if (s.length !== t.length) return false;
-//     let obj = {}
-//     for (let i = 0; i < s.length; i++) {
-//         obj[s[i]] = (obj[s[i]] || 0) + 1;
-//     }
-//     for (let j = 0; j < t.length; j++) {
-//         if (obj[t[j]] === undefined) {
-//             return false
-//         }
-//         obj[t[j]]--;
-//     }
-//     for (let key in obj) {
-//         if (obj[key] !== 0) {
-//             return false
-//         }
-//     }
-//     return true;
-// }
-// console.log(isAnagram("anagram", "nagaram"));
-
-
-// LeetCode 383 - Ransom Note(Easy)
-// var canConstruct = function (ransomNote, magazine) {
-//     if (ransomNote.length > magazine.length) return false
-//     let obj = {}
-//     for (let i of ransomNote) {
-//         obj[i] = (obj[i] || 0) + 1
-//     }
-//     for (let i of magazine) {
-//         if (obj[i]) {
-//             obj[i]--;
-//         }
-//     }
-//     for (let key in obj) {
-//         if (obj[key] !== 0) {
-//             return false
-//         }
-//     }
-//     return true
-// };
-// console.log(canConstruct("aabbcc", "aabbc"))
-
-
-// LeetCode 387 - First Unique Character in a String
-// var firstUniqChar = function (s) {
-//     let data = {}
-//     for (let i of s) {
-//         data[i] = (data[i] || 0) + 1
-//     }
-//     for (let i = 0; i < s.length; i++) {
-//         if (data[s[i]] === 1) {
-//             return i
-//         }
-//     }
-//     return -1
-// };
-// console.log(firstUniqChar("leetcode"))
-
-
-// LeetCode 49 - Group Anagrams(Medium)
-// var groupAnagrams = function (strs) {
-//     let obj = {};
-//     for (let str of strs) {
-//         let key = str.split('').sort().join('');
-//         if (!obj[key]) {
-//             obj[key] = [];
-//         }
-//         obj[key].push(str);
-//     }
-//     return Object.values(obj);
-// };
-// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
-
-
-
-// LeetCode 451 - Sort Characters By Frequency(Medium)
-// const frequencySort = function (s) {
-//     let count = {}
-//     for (let char of s) {
-//         count[char] = (count[char] || 0) + 1
-//     }
-//     let sortedCount = Object.entries(count).sort((a, b) => b[1] - a[1])
-//     let result = ""
-//     for (let [char, freq] of sortedCount) {
-//         for (let i = 0; i < freq; i++) {
-//             result += char;
-//         }
-//     }
-//     return result;
-// }
-// console.log(frequencySort("tree"))
-
-
-
-// LeetCode 125 - Valid Palindrome
-// function isPalindrome(s) {
-//     let newStr = ""
-//     for (let i = 0; i < s.length; i++) {
-//         let ascii = s.charCodeAt(i)
-//         if (ascii >= 65 && ascii <= 90) {
-//             ascii = ascii + 32
-//         }
-//         if ((ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) {
-//             newStr += String.fromCharCode(ascii)
-//         }
-//     }
-//     let left = 0;
-//     let right = newStr.length - 1
-//     while (left < right) {
-//         if (newStr[left] !== newStr[right]) {
-//             return false;
-//         }
-//         left++;
-//         right--;
-//     }
-//     return true;
-// }
-// console.log(isPalindrome("A man, a plan, a canal: Panama"));
-
-
-// LeetCode 344 - Reverse String(Easy)
-const reverseString = function (s) {
-    let left = 0
-    let right = s.length - 1
-    while (left <= right) {
-        let temp = s[left]
-        s[left] = s[right]
-        s[right] = temp
-
-        left++
-        right--
+const maxProductOfThree = (arr) => {
+    let max1 = - Infinity
+    let max2 = - Infinity
+    let max3 = - Infinity
+    let min1 = Infinity
+    let min2 = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        let n = arr[i]
+        if (n > max1) {
+            max3 = max2;
+            max2 = max1
+            max1 = n
+        }
+        else if (n > max2) {
+            max3 = max2;
+            max2 = n
+        }
+        else {
+            if (n > max3) {
+                max3 = n
+            }
+        }
+        if (n < min1) {
+            min2 = min1;
+            min1 = n
+        }
+        else {
+            if (n < min2) {
+                min2 = n
+            }
+        }
     }
-    return s
+    let product1 = max1 * max2 * max3;
+    let product2 = min1 * min2 * max1;
+    return product1 > product2 ? product1 : product2
 }
-console.log(reverseString(["H", "a", "n", "n", "a", "h"]));
+console.log(maxProductOfThree([-5, -2, -1, 4, 3]));

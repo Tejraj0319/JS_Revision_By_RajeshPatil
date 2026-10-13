@@ -63,15 +63,3 @@ LeetCode 525 - Longest Subarray with Equal Number of 0s and 1s(Medium)
 Longest Subarray with Equal Sum of Two Halves
 Longest Substring with Exactly K Unique Characters
 Maximum Product of Three Elements.
-
-------------------------------------------------- String ------------------------------------------
-* Pattern = Frequency Counting
-LeetCode 242 - Valid Anagram(Easy)
-LeetCode 383 - Ransom Note(Easy)
-LeetCode 387 - First Unique Character in a String(Easy)
-LeetCode 451 - Sort Characters By Frequency(Medium)
-LeetCode 49 - Group Anagrams(Medium)
-
-* Pattern = Two Pointers 
-LeetCode 125 - Valid Palindrome(Easy)
-LeetCode 344 - Reverse String(Easy)
