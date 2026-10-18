@@ -867,35 +867,26 @@
 
 
 // Tech Number
-// let digits = 0
-// const countDigits = (n) => {
-//     let temp = n
-//     while (temp > 0) {
+// const isTechNum = (str) => {
+//     let digits = 0
+//     for (let i = 0; i < str.length; i++) {
 //         digits++;
-//         temp = (temp / 10) | 0
 //     }
-// }
-// const isTechNum = (num) => {
-//     countDigits(num);
-//     let halfLength = digits / 2;
-//     if (digits % 2 !== 0) {
-//         console.log("Not a techNumber!")
+//     let num = 0
+//     for (let i = 0; i < str.length; i++) {
+//         num = num * 10 + (str.charCodeAt(i) - 48)
 //     }
-//     let divisor = 1;
-//     for (let i = 0; i < halfLength; i++) {
-//         divisor = divisor * 10;
+//     let half_length = digits / 2
+//     let divisor = 1
+//     for (let i = 0; i < half_length; i++) {
+//         divisor *= 10;
 //     }
-//     let firstHalf = (num / divisor) | 0
-//     let secondHalf = num % divisor
-//     let sumAndSquareOfHalf = (firstHalf + secondHalf) ** 2;
-//     if (sumAndSquareOfHalf === num) {
-//         console.log("Is techNumber")
-//     }
-//     else {
-//         console.log("Not a techNumber")
-//     }
-// }
-// isTechNum(2025)
+//     let first_half = (num / divisor) | 0
+//     let second_half = num % divisor
+//     let sum_of_square_of_two_halfs = (first_half + second_half) ** 2
+//     return sum_of_square_of_two_halfs === num;
+// };
+// console.log(isTechNum("2025"));
 
 
 
