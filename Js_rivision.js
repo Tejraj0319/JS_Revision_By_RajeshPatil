@@ -24,6 +24,17 @@
 // console.log(isNaN(" "))
 
 
+// Type Coercion
+// plus is the only operator which will convert number to string and concatenate it with string.
+// all other operators will convert string to number and perform operation.
+// console.log("10"+5);
+// console.log("10"-5);
+// console.log("10"*5);
+// console.log("10"**2);
+// console.log("10"/5);
+// console.log("10"%5);
+
+
 //IIFE
 // (function(){
 //   console.log("Self invoking function is also known as IIFE (Immediately invoked function)")
@@ -408,3 +419,20 @@ var z = 0;
 z = ++z
 // z = z++ // this will first assign z to 0 and then increment it, so z will be 0 only
 console.log(z);
+
+
+
+
+// Rest and Spread operator
+// rest : Collects multiple elements into array.
+function xyz(...num) {
+    console.log(num);
+}
+xyz(1, 2, 3)
+
+// spread : Expands elements from array and pass them individually.
+function add(a, b, c) {
+    console.log(a + b + c);
+}
+let a = [1, 2, 3]
+add(...a);
