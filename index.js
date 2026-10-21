@@ -1404,25 +1404,43 @@
 
 
 // find greatest common divisor
-const greatestCommonDivisior = function (a, b) {
-    let count = 0
-    let num1_divisiors = []
-    let num2_divisiors = []
-    for (let i = 1; i < a; i++) {
-        num1_divisiors.push(a / i)
+// const greatestCommonDivisior = function (a, b) {
+//     let count = 0
+//     let num1_divisiors = []
+//     let num2_divisiors = []
+//     for (let i = 1; i < a; i++) {
+//         num1_divisiors.push(a / i)
+//     }
+//     for (let i = 1; i < b; i++) {
+//         num2_divisiors.push(b / i)
+//     }
+//     for (let i = 0; i < num1_divisiors.length; i++) {
+//         for (let j = 0; j < num2_divisiors.length; j++) {
+//             if (num1_divisiors[i] == num2_divisiors[j]) {
+//                 if (count < num1_divisiors[i]) {
+//                     count = num1_divisiors[i];
+//                 }
+//             }
+//         }
+//     }
+//     return count;
+// }
+// console.log(greatestCommonDivisior(18, 12))
+
+
+
+// Remove Duplicate Characters from string.
+const removeRepeatedChar = function (str) {
+    let obj = {}
+    let newStr = ""
+    for (let char of str) {
+        obj[char] = (obj[char] || 0) + 1
     }
-    for (let i = 1; i < b; i++) {
-        num2_divisiors.push(b / i)
-    }
-    for (let i = 0; i < num1_divisiors.length; i++) {
-        for (let j = 0; j < num2_divisiors.length; j++) {
-            if (num1_divisiors[i] == num2_divisiors[j]) {
-                if (count < num1_divisiors[i]) {
-                    count = num1_divisiors[i];
-                }
-            }
+    for (let char in obj) {
+        if (obj[char] === 1) {
+            newStr += char
         }
     }
-    return count;
+    return newStr
 }
-console.log(greatestCommonDivisior(18, 12))
+console.log(removeRepeatedChar("HelloWorld!"));
